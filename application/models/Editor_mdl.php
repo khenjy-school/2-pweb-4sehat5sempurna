@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class EditorMdl extends CI_Model{
+class Editor_mdl extends CI_Model{
 
 	public function getEditor()
 	{

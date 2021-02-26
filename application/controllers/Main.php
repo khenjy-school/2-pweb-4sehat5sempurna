@@ -1,178 +1,115 @@
 <?php
-
 /**
- *  
+ *	Controller main adalah controller yang bertugas untuk mengatur perpindahan antar halaman web.
+ *	Dengan begitu programmer tidak perlu menambahkan public function tampil pada controllernya.
+ *	Controller ini bisa digunakan oleh controllerr lain melalui fungsi redirect.
+ *	Nama public function diketik dengan nama tampil_namahalaman.
+ *	Isi koding adalah $this->load->view('namahalaman');
+ *	Fungsi Redirect ke controller ini adalah redirect('main/namapublicfunction', 'refresh');
+ *	Susunan public function diatur berdasarkan urutan pada layer di figma
  */
 class Main extends CI_Controller
 {
 	
 	function __construct(argument)
 	{
-		parent::__construct();
-		$this->load->model('EditorMdl');
-		$this->load->model('BlogMdl');
-		$this->load->model('KomentarMdl');
-		$this->load->model('ViewMdl');
 		$this->load->helper('url');
+
 	}
 
-
-
-	//Editor Controller
-	public function tambah_akun()
+	//Berfungsi untuk menampilkan halaman index
+	public function tampil_home()
 	{
-		//tampung data di array
-		$data = array(
-			'id_editor' => '';	//tambah id otomatis di database
-			'nama' => $this->input->post(''),
-			'email' => $this->input->post(''),
-			'password' => $this->input->post(''),
-			'telp' => $this->input->post(''),
-			'tglgabung' => $this->input->post('')
-		);
-
-		$this->EditorMdl->add_editor($data);
-		$this->EditorMdl->jmlh_editor($data);
+		$this->load->view('home');
 	}
 
-	public function masuk_editor() //cek editor
+	//Berfungsi untuk menampilkan halaman about
+	public function tampil_about()
 	{
-		$username = $this->input->post('txtnama');
-		$password = $this->ipput->post('txtpassword');
-
-		$cek_editor = $this->EditorMdl->cek_editor('editor', array("nama" => $username))->num_rows();
-		//fungsi num_rows mengembalikan jumlah record
-		if ($cek_editor > 0) {
-			$cek_pass =  $this->EditorMdl->cek_editor('editor', array("password" => $password))->num_rows();
-			if ($cek_pass > 0) {
-				echo "<script>alert('Berhasil Login!')</sccript>";
-				redirect(site_url,'editor');
-			}
-			else{
-				echo "<script>alert('Password Salah!')</sccript>";
-				redirect(site_url,'login');
-			}
-		}else{
-			echo "<script>alert('Username Tidak ditemukan!')</sccript>";
-			redirect(site_url, 'login');
-		}
+		$this->load->view('public/about');
 	}
-	
+
+	//Berfungsi untuk menampilkan halaman error
+	public function tampil_error()
+	{
+		$this->load->view('public/error');
+	}
+
+	//Berfungsi untuk menampilkan halaman kontak
+	public function tampil_kontak()
+	{
+		$this->load->view('public/kontak');
+	}
+
+	//Berfungsi untuk menampilkan halaman admin
+	public function tampil_admin()
+	{
+		$this->load->view('admin/admin');
+	}
+
+	//Berfungsi untuk menampilkan halaman signup
+	public function tampil_signup()
+	{
+		$this->load->view('signup');
+	}
+
+	//Berfungsi untuk menampilkan halaman login
+	public function tampil_login()
+	{
+		$this->load->view('login');
+	}
+
+	//Berfungsi untuk menampilkan halaman penghung
+	public function tampil_penghubung()
+	{
+		$this->load->view('public/penghubung');
+	}
+
+	//Berfungsi untuk menampilkan halaman utama editor
 	public function tampil_editor()
 	{
-		$data = array(
-			"konten" => "admin/"
-		)
-		$data[''] = $this->EditorMdl->tampil_data()->result(); 
-		$this->load->view('admin', $data);
+		$this->load->view('editor/editor');
 	}
 
-	public function update_editor()
+	//Berfungsi untuk menampilkan halaman buat blog
+	public function tampil_buatblog()
 	{
-
+		$this->load->view('editor/buatblog');
 	}
 
-	public function delete_editor($id=null)
+	//Berfungsi untuk menampilkan halaman utama makanan pokok
+	public function tampil_makananpokok()
 	{
-		if (condition) {
-			# code...
-		}
-
-		if ($this->main->delete_editor($id_editor)) {
-			redirect(site_url,'admin/editor');
-		}else{
-			echo "<script>alert('Tidak ada data yang dihapus')</sccript>"
-			redirect(site_url, 'admin/editor');
-		}
+		$this->load->view('public/makananpokok');
 	}
 
-	public function logout()
+	//Berfungsi untuk menampilkan halaman utama lauk pauk
+	public function tampil_laukpauk()
 	{
-		$this->session->sess_destroy();
-		redirect('login');
+		$this->load->view('public/laukpauk');
 	}
 
-
-
-
-	//Blog Controller
-	public function posting_blog()
+	//Berfungsi untuk menampilkan halaman utama sayur
+	public function tampil_sayur()
 	{
-		//tampung data di array
-		$data = array(
-			'id_blog' = '',	//tambah id otomatis di database
-			'judul' => $this->input->post(''),
-			'nama' => $this->input->post('')
-		);
-
-		$this->BlogMdl->add_blog($data);
-		$this->BlogMdl->jmlh_blog($data);
+		$this->load->view('public/sayur');
 	}
 
-	public function tampil_blog()
+	//Berfungsi untuk menampilkan halaman utama buah
+	public function tampil_buah()
 	{
-
+		$this->load->view('public/buah');
 	}
 
-	public function update_blog()
+	//Berfungsi untuk menampilkan halaman utama susu
+	public function tampil_susu()
 	{
-
+		$this->load->view('public/susu');
 	}
 
-	public function delete_blog()
+	//Berfungsi sebagai contoh
+	public function namahalaman()
 	{
-
-	}
-
-
-
-
-
-	//Komentar Controller
-	public function posting_komentar()
-	{
-		$data = array(
-			'id_komentar' = '',	//tambah id otomatis di database
-			'nama' => $this->input->post(''),
-			'email' => $this->input->post(''),
-			'isi' => $this->input->post(''),
-			'tglkomen' => $this->input->post('')
-		);
-
-		$this->KomentarMdl->add_komentar($data);
-		$this->EditorMdl->jmlh_komentar($data);
-	}
-
-	public function tampil_komentar()
-	{
-
-	}
-
-	public function update_komentar()
-	{
-
-	}
-	public function delete_komentar()
-	{
-
-	}
-
-
-
-
-	//Viewer Controller
-	public function viewer()
-	{
-		$data = array(
-			'id_viewer' = ''	//tambah id otomatis di database
-		);
-
-		$this->EditorMdl->jmlh_viewer($data);
-		$this->
-	}
-
-		public function tampil_viewer()
-	{
-
+		$this->load->view('namahalaman');
 	}
 }
