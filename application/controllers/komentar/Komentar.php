@@ -36,14 +36,20 @@ class Komentar extends CI_Controller
 	}
 
 
-	//Berfungsi untuk 
-	public function tabel()
+	//Berfungsi untuk mendapatkan tabel
+	public function getALl()
 	{
 		$data = array(
 			"konten" => "admin/"
 		)
 		$data[''] = $this->EditorMdl->tampil_data()->result(); 
 		$this->load->view('admin', $data);
+	}
+
+	//Berfungsi untuk mendapatkan tabel berdasarkan id
+	public function getById()
+	{
+
 	}
 
 

@@ -71,13 +71,19 @@ class Editor extends CI_Controller
 
 
 	//Berfungsi untuk menampilkan tabel editor melalui halaman admin bagian editor
-	public function tabel()
+	public function getAll()
 	{
 		$data = array(
 			"konten" => "admin/"
 		)
 		$data[''] = $this->EditorMdl->tampil_data()->result(); 
 		redirect('main/tampil_admin', 'refresh')
+	}
+
+	//Berfungsi untuk menampilkan tabel
+	public function getById()
+	{
+		
 	}
 
 

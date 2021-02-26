@@ -25,12 +25,24 @@ class Blog extends CI_Controller
 		redirect('main/tampil_blog', 'refresh');
 	}
 
-
 	//Berfungsi untuk menambah blog melalui tabel pada halaman admin bagian blog
 	public function admin_tambah()
 	{
 		$this->load->view('admin/admin', $data);
 	}
+
+	//Berfungsi untuk menampilkan tabel
+	public function getALl()
+	{
+
+	}
+
+	//Berfungsi untuk mendapatkan tabel berdasarkan id
+	public function getById()
+	{
+		
+	}
+
 
 	//Berfungsi untuk mengedit blog melalui form edit pada halaman utama editor ataupun form edit blog pada halaman admin
 	public function edit($id)
