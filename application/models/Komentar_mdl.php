@@ -18,17 +18,20 @@ class Komentar_mdl extends CI_Model
 		return $this->db->get('komentar')->row();
 	}
 
+	//Berfungsi untuk menyimpan data pada tabel komentar
 	public function save($table, $data)
 	{
 		$this->db->insert($table, $data);
 	}
 
+	//Berfungsi untuk melakukan update data pada tabel komentar
 	public function update()
 	{
 		$this->db->where($where);
 		$this->db->update($table, $data);
 	}
 
+	//Berfungsi untuk menghapus data pada tabel komentar
 	public function delete()
 	{
 		$this->db->where($where);

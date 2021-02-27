@@ -17,18 +17,21 @@ class Blog_mdl extends CI_Model
 		return $this->db->get_where($this->_table, ["id_editor" => $id])->row();
 	}
 
+	//Berfungsi untuk menyimpan data pada tabel blog
 	public function save($table, $data)
 	{
 		$this->db->insert($table, $data);
 	}
 
+	//Berfungsi untuk melakukan update data pada tabel blog
 	public function update()
 	{
 		$this->db->where($where);
 		$this->db->update($table, $data);
 	}
 
-	public function detele()
+	//Berfungsi untuk menghapus data pada tabel blog
+	public function delete()
 	{
 		$this->db->where($where);
 		$this->db->delete($table);

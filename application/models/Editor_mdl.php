@@ -3,12 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /**
  * 
  */
-class Editor_mdl extends CI_Model{
-
+class Editor_mdl extends CI_Model
+{
 	//Berfungsi untuk mengambil data hasil query
 	public function getALl()
 	{
-		return $this->db->get($this->table)>result();
+		return $this->db->get($this->table)->result();
 	}
 
 	//Berfungsi untuk mengambil satu data dari hasil query
@@ -17,12 +17,14 @@ class Editor_mdl extends CI_Model{
 		return $this->db->get_where($this->table, ["id_editor" => $id])->row();
 	}
 
-	public function save()	//untuk menambahkan editor halaman buat akun
+	//Berfungsi untuk
+	public function save()
 	{
         return $this->db->insert('editor', $data);
 	}
 
-	public function update()	//untuk halaman admin (edit)
+	//Berfungsi untuk
+	public function update()
 	{
 		$data = array(
 			'nama' => $nama,
@@ -33,13 +35,15 @@ class Editor_mdl extends CI_Model{
 		$this->db->update('editor', $data);
 	}
 
-	public function delete($id)	//untuk halaman admin
+	//Berfungsi untuk
+	public function delete($id)
 	{
 		$this->db->where('id' $id);
 		$this->db->delete('editor');
 	}
 
-	public function jmlh_editor($value='')	//untuk menghitung jumlah editor di halaman admin
+	//Berfungsi untuk menghitung jumlah editor
+	public function jmlh_editor($value='')
 	{
 		$this->db->count('id_editor', $data)
 	}
