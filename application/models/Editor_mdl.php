@@ -1,36 +1,28 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+/**
+ * 
+ */
 class Editor_mdl extends CI_Model{
 
-	public function getEditor()
+	//Berfungsi untuk mengambil data hasil query
+	public function getALl()
 	{
-		$result = $this->db->get('editor');
-		return $result;
+		return $this->db->get($this->table)>result();
 	}
 
-	
-
-	public function save_editor()	//untuk menambahkan editor halaman buat akun
+	//Berfungsi untuk mengambil satu data dari hasil query
+	public function getById($id)
 	{
-		post = $this->input->post();
-        $this->product_id = uniqid();
-        $this->name = $post["name"];
-        $this->price = $post["price"];
-        $this->description = $post["description"];
-        return $this->db->insert($this->_table, $this);
+		return $this->db->get_where($this->table, ["id_editor" => $id])->row();
 	}
 
-	public function cek_editor($tabel, $where)
+	public function save()	//untuk menambahkan editor halaman buat akun
 	{
-		return $this->db->get_where($tabel, $where);
+        return $this->db->insert('editor', $data);
 	}
 
-	public function tampil_editor()	//untuk menampilkan tabel editor di halaman admin
-	{
-		$this->db->get('editor');
-	}
-	public function update_editor()	//untuk halaman admin (edit)
+	public function update()	//untuk halaman admin (edit)
 	{
 		$data = array(
 			'nama' => $nama,
@@ -41,7 +33,7 @@ class Editor_mdl extends CI_Model{
 		$this->db->update('editor', $data);
 	}
 
-	public function del_editor($id)	//untuk halaman admin
+	public function delete($id)	//untuk halaman admin
 	{
 		$this->db->where('id' $id);
 		$this->db->delete('editor');
