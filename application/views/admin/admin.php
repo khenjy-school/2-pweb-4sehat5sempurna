@@ -9,102 +9,13 @@
   <body>
       <?php $this->load->view('admin/_partials/headeradm.php') ?>
 
-    <div class="container">
-      <div class="row">
-
-        <!--Navigasi Admin-->
-        <div class="col-md-2">
-          <div class="row">
-            logo 4 sehat 5 sempurna
-          </div>
-          <div class="row">
-            dashboard
-          </div>
-          <div class="row">
-            Daftar Editor
-          </div>
-          <div class="row">
-            Jumlah Blog
-          </div>
-          <div class="row">
-            Jumlah Viewer
-          </div>
-          <div class="row">
-            Jumlah Komentar
-          </div>
-        </div>
-
-        <!--Isi Konten-->
-        <div class="col-md-10">
-
-          <!--Barisan atas untuk search-->
-          <div class="row">
-            <div class="form-inline">
-              
-            </div>
-          </div>
-
-          <div>
-        </div>
-
-          <!--Barisan bawah untuk background-->
-          <div class="row">
-            <!--Barisan isi untuk daftar-->
-            <div class="row">
-
-              <!--Daftar barisan 1-->
-              <div class="col">
-
-                <!--Jumlah Editor-->
-                <div class="card">
-                  <h2>Jumlah Editor</h2>
-                  <span></span>
-                </div>
-
-                <!--Jumlah Komentar-->
-                <div class="card">
-                  <h2>Jumlah Komentar</h2>
-                  <span></span>
-                </div>
-              </div>
-
-              <!--Daftar barisan 2-->
-              <div class="col">
-                <!--Jumlah Blog-->
-                <div class="card">
-                  <h2>Jumlah Blog</h2>
-                  <span></span>
-                </div>
-              </div>
-
-              <!--Daftar barisan 3-->
-              <div class="col">
-                <!--Jumlah Viewer-->
-                <div class="card">
-                  <h2>Jumlah Viewer</h2>
-                  <span></span>
-                </div>
-              </div>
-
-            </div>
-
-            <!--Barisan isi untuk lainnya-->
-            <div class="row">
-              <div>
-                
-              </div>
-            </div>
-          </div>
+      <div class="container">
+        <div>
+          
         </div>
       </div>
-    </div>
   
-<?php $this->load->view('admin/_partials/footeradm.php') ?>
-
-
-
-
-
+      <?php $this->load->view('admin/_partials/footeradm.php') ?>
 
 
  

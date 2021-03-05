@@ -13,19 +13,19 @@ class Main extends CI_Controller
 		$this->load->model('Editor_mdl');
 		$this->load->model('Komentar_mdl');
 		$this->load->helper('url');
-
 	}
 
 	//Berfungsi untuk menampilkan halaman utama admin (dashboard)
 	public function tampil_admin()
 	{
-		$this->load->view('admin/admin.php', $data);
+		$this->load->view('admin/admin.php');
 	}
 
 	//Berfungsi untuk menampilkan halaman admin bagian blog (sementara sebelum dipindahkan ke controller masing-masing)
 	public function tampil_admin_blog()
 	{
 		$data["blog"] = $this->blog_mdl->getAll();
+		$this->load->view('admin/blog/tabelblog.php');
 		$this->load->view('admin/_partials/tableblog.php', $data);
 	}
 
@@ -39,7 +39,7 @@ class Main extends CI_Controller
 	//Berfungsi untuk menampilkan halaman admin bagian komentar (sementara sebelum dipindahkan ke controller masing-masing)
 	public function tampil_admin_komentar()
 	{
-		$data["komentar"] = $this->K=komentar_mdl->getAll();
+		$data["komentar"] = $this->komentar_mdl->getAll();
 		$this->load->view('table/tablekomentar.php', $data);
 	}
 
