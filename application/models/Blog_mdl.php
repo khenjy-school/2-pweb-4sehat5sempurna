@@ -28,6 +28,7 @@ class Blog_mdl extends CI_Model
 	public function save($table, $data)
 	{
 		$this->db->insert($table, $data);
+		$this->load->view('admin/')
 	}
 
 	//Berfungsi untuk melakukan update data pada tabel blog

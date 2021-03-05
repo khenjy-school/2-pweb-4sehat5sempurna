@@ -13,7 +13,7 @@
             <span>Blog</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-            <a class="dropdown-item" href="<?php echo site_url('main/tampil') ?>">Add Blog</a>
+            <a class="dropdown-item" href="<?php echo site_url('main/tampil_add_blog') ?>">Add Blog</a>
             <a class="dropdown-item" href="<?php echo site_url('main/tampil_admin_blog') ?>">List Blog</a>
         </div>
     </li>
