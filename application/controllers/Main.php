@@ -6,9 +6,12 @@
 class Main extends CI_Controller
 {
 	
-	public function __construct()
+	function __construct()
 	{
 		parent::__construct();
+		$this->load->model('Blog_mdl');
+		$this->load->model('Editor_mdl');
+		$this->load->model('Komentar_mdl');
 		$this->load->helper('url');
 
 	}
@@ -22,18 +25,21 @@ class Main extends CI_Controller
 	//Berfungsi untuk menampilkan halaman admin bagian blog (sementara sebelum dipindahkan ke controller masing-masing)
 	public function tampil_admin_blog()
 	{
-		$this->load->view('table/tableblog.php', $data);
+		$data["blog"] = $this->blog_mdl->getAll();
+		$this->load->view('admin/_partials/tableblog.php', $data);
 	}
 
 	//Berfungsi untuk menampilkan halaman admin bagian editor (sementara sebelum dipindahkan ke controller masing-masing)
 	public function tampil_admin_editor()
 	{
+		$data["editor"] = $this->editor_mdl->getAll();
 		$this->load->view('table/tableeditor.php', $data);
 	}
 
 	//Berfungsi untuk menampilkan halaman admin bagian komentar (sementara sebelum dipindahkan ke controller masing-masing)
 	public function tampil_admin_komentar()
 	{
+		$data["komentar"] = $this->K=komentar_mdl->getAll();
 		$this->load->view('table/tablekomentar.php', $data);
 	}
 

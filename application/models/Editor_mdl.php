@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Editor_mdl extends CI_Model
 {
 	//Berfungsi untuk mengambil data hasil query
-	public function getALl()
+	public function getAll()
 	{
 		return $this->db->get($this->table)->result();
 	}
@@ -38,14 +38,14 @@ class Editor_mdl extends CI_Model
 	//Berfungsi untuk
 	public function delete($id)
 	{
-		$this->db->where('id' $id);
+		$this->db->where('id', $id);
 		$this->db->delete('editor');
 	}
 
 	//Berfungsi untuk menghitung jumlah editor
 	public function jmlh_editor($value='')
 	{
-		$this->db->count('id_editor', $data)
+		$this->db->count('id_editor', $data);
 	}
 }
 ?>

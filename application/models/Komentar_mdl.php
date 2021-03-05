@@ -6,15 +6,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Komentar_mdl extends CI_Model
 {
 	//Berfungsi untuk mengambil data hasil query
-	public function getALl()
+	public function getAll()
 	{
 		return $this->db->get($this->table)>result();
 	}
 
 	//Berfungsi untuk mengambil satu data dari hasil query
-	public function getById($id)
+	public function getById($id_komentar)
 	{
-		$this->db->where('id_komentar', $id);
+		$this->db->where('id_komentar', $id_komentar);
 		return $this->db->get('komentar')->row();
 	}
 

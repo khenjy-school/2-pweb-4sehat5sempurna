@@ -6,7 +6,7 @@
 class Editor extends CI_Controller
 {
 	
-	function __construct(argument)
+	function __construct()
 	{
 		parent::__construct();
 		$this->load->model('EditorMdl');

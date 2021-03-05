@@ -5,16 +5,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  */
 class Blog_mdl extends CI_Model
 {
+	private $_table = "blog";
+
+	public $id_blog;
+    public $judul_blog;
+    public $nama_editor;
+    public $isi_blog;
+
 	//Berfungsi untuk mengambil data hasil query
-	public function getALl()
+	public function getAll()
 	{
 		return $this->db->get($this->_table)>result();
 	}
 
 	//Berfungsi untuk mengambil satu data dari hasil query
-	public function getById($id)
+	public function getById($id_blog)
 	{
-		return $this->db->get_where($this->_table, ["id_editor" => $id])->row();
+		return $this->db->get_where($this->_table, ["id_blog" => $id_blog])->row();
 	}
 
 	//Berfungsi untuk menyimpan data pada tabel blog
@@ -35,8 +42,8 @@ class Blog_mdl extends CI_Model
 	//Berfungsi untuk menghapus data pada tabel blog
 	public function delete()
 	{
-		$this->db->where($id);
-		return $this->db->delete($this->_table, array("id_blog" => $id));
+		$this->db->where($id_blog);
+		return $this->db->delete($this->_table, array("id_blog" => $id_blog));
 	}
 
 	public function _uploadImage()
