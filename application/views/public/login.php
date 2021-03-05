@@ -18,3 +18,5 @@
 </tr>
 </table>
 </form>
+
+<?php $this->load->view('public/_partials/footer.php') ?>   

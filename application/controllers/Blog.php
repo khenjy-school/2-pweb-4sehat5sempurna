@@ -31,7 +31,7 @@ class Blog extends CI_Controller
 		$data = array(
 			'id_blog' => '',
 			'judul_blog' => $this->input->post('txtjudul'),
-			'nama_editor' => $this->input->post('txteditor')
+			'nama_editor' => $this->input->post('txteditor'),
 			'isi_blog' => $this->input->post('txtblog')
 
 		);
