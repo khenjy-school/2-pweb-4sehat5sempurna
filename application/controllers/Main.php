@@ -16,7 +16,7 @@ class Main extends CI_Controller
 	public function tampil_admin()
 	{
 		$this->load->view('template/headeradm');
-		$this->load->view('admin/admin', $data);
+		$this->load->view('admin/admin.php', $data);
 		$this->load->view('template/footeradm');
 	}
 

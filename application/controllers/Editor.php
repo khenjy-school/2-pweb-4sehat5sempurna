@@ -83,14 +83,14 @@ class Editor extends CI_Controller
 	//Berfungsi untuk menampilkan tabel
 	public function getById()
 	{
-		
+		$query = $this->db->get_where('', array('id' => $id), $limit, $offset);
 	}
 
 
 	//Berfungsi untuk mengedit data editor melalui halaman setting pada halaman editor maupun melalui form pada halaman admin bagian editor
 	public function edit()
 	{
-
+		
 	}
 
 
@@ -104,10 +104,6 @@ class Editor extends CI_Controller
 	//Berfungsi untuk menghapus data editor melalui tabel editor pada halaman admin bagian editor
 	public function delete($id=null)
 	{
-		if (condition) {
-			# code...
-		}
-
 		if ($this->main->delete_editor($id_editor)) {
 			redirect(site_url,'admin/editor');
 		}else{

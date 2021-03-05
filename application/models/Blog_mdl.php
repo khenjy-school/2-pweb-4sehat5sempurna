@@ -28,12 +28,25 @@ class Blog_mdl extends CI_Model
 	{
 		$this->db->where($where);
 		$this->db->update($table, $data);
+
+		return $this->db->update(_table, $data);
 	}
 
 	//Berfungsi untuk menghapus data pada tabel blog
 	public function delete()
 	{
-		$this->db->where($where);
-		$this->db->delete($table);
+		$this->db->where($id);
+		return $this->db->delete($this->_table, array("id_blog" => $id));
+	}
+
+	public function _uploadImage()
+	{
+		$config['upload_path']		= './upload//';
+		$config['allowed types']	= 'gif|jpg|png';
+		$config['file_name']            = $this->id_blog;
+		$config['overwrite']			= true;
+		$config['max_size']             = 1024; // 1MB
+		// $config['max_width']            = 1024;
+		// $config['max_height']           = 768;
 	}
 }
