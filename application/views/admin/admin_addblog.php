@@ -2,6 +2,8 @@
 <html lang="en">
   <head>
     <?php $this->load->view('admin/_partials/head.html') ?>
+
+
     <title>Admin</title>
   </head>
   <body>
@@ -9,12 +11,12 @@
 
       <div class="container">
         <div class="row">
-          <div class="col-md-3">
+          <div class="col">
             <?php $this->load->view('admin/_partials/sidebaradm.php') ?>
           </div>
 
           <div class="col">
-            Dashboard
+            <?php $this->load->view('admin/_partials/blog/form_addblog.php') ?>
           </div>
         </div>
       </div>

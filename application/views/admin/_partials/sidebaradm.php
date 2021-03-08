@@ -1,7 +1,7 @@
 <!-- Sidebar -->
 <ul class="sidebar navbar-nav">
     <li class="nav-item <?php echo $this->uri->segment(2) == '' ? 'active': '' ?>">
-        <a class="nav-link" href="<?php echo site_url('admin') ?>">
+        <a class="nav-link" href="<?php echo site_url('main/tampil_admin') ?>">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span>
         </a>
@@ -13,8 +13,8 @@
             <span>Blog</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-            <a class="dropdown-item" href="<?php echo site_url('main/tampil_add_blog') ?>">Add Blog</a>
-            <a class="dropdown-item" href="<?php echo site_url('main/tampil_admin_blog') ?>">List Blog</a>
+            <a class="dropdown-item" href="<?php echo site_url('blog/tampil_addblog') ?>">Add Blog</a>
+            <a class="dropdown-item" href="admin_blog.php">List Blog</a>
         </div>
     </li>
     <li class="nav-item dropdown <?php echo $this->uri->segment(2) == 'editor' ? 'active': '' ?>">
@@ -24,7 +24,7 @@
             <span>Editor</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-            <a class="dropdown-item" href="<?php echo site_url('admin/blog/add') ?>">New Editor</a>
+            <a class="dropdown-item" href="<?php $this->load->view('admin/_partials/editor/form_addeditor.php') ?>">New Editor</a>
             <a class="dropdown-item" href="<?php echo site_url('admin/products') ?>">List Editor</a>
         </div>
     </li>

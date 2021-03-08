@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  */
 class Blog_mdl extends CI_Model
 {
-	private $_table = "blog";
+	private $_table = 'blog';
 
 	public $id_blog;
     public $judul_blog;
@@ -13,9 +13,9 @@ class Blog_mdl extends CI_Model
     public $isi_blog;
 
 	//Berfungsi untuk mengambil data hasil query
-	public function getAll()
+	public function getAll($_table)
 	{
-		return $this->db->get($this->_table)>result();
+		return $this->db->get($_table);
 	}
 
 	//Berfungsi untuk mengambil satu data dari hasil query
@@ -25,10 +25,10 @@ class Blog_mdl extends CI_Model
 	}
 
 	//Berfungsi untuk menyimpan data pada tabel blog
-	public function save($table, $data)
+	public function save($_table, $data)
 	{
-		$this->db->insert($table, $data);
-		$this->load->view('admin/')
+		$this->db->insert('blog', $data);
+		redirect('main/tampil_admin_blog', 'refresh');
 	}
 
 	//Berfungsi untuk melakukan update data pada tabel blog
@@ -37,7 +37,7 @@ class Blog_mdl extends CI_Model
 		$this->db->where($where);
 		$this->db->update($table, $data);
 
-		return $this->db->update(_table, $data);
+		return $this->db->update('_table', $data);
 	}
 
 	//Berfungsi untuk menghapus data pada tabel blog
@@ -45,16 +45,5 @@ class Blog_mdl extends CI_Model
 	{
 		$this->db->where($id_blog);
 		return $this->db->delete($this->_table, array("id_blog" => $id_blog));
-	}
-
-	public function _uploadImage()
-	{
-		$config['upload_path']		= './upload//';
-		$config['allowed types']	= 'gif|jpg|png';
-		$config['file_name']            = $this->id_blog;
-		$config['overwrite']			= true;
-		$config['max_size']             = 1024; // 1MB
-		// $config['max_width']            = 1024;
-		// $config['max_height']           = 768;
 	}
 }

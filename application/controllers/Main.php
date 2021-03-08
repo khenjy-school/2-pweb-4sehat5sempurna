@@ -24,23 +24,28 @@ class Main extends CI_Controller
 	//Berfungsi untuk menampilkan halaman admin bagian blog (sementara sebelum dipindahkan ke controller masing-masing)
 	public function tampil_admin_blog()
 	{
-		$data["blog"] = $this->blog_mdl->getAll();
-		$this->load->view('admin/blog/tabelblog.php');
-		$this->load->view('admin/_partials/tableblog.php', $data);
+		$data = array(
+			'blog' => $this->Blog_mdl->getAll('blog')->result()
+		);
+		$this->load->view('admin/admin_blog.php', $data);
 	}
 
 	//Berfungsi untuk menampilkan halaman admin bagian editor (sementara sebelum dipindahkan ke controller masing-masing)
 	public function tampil_admin_editor()
 	{
-		$data["editor"] = $this->editor_mdl->getAll();
-		$this->load->view('table/tableeditor.php', $data);
+		$data = array(
+			'editor' => $this->Editor_mdl->getAll('editor')->result()
+		);
+		$this->load->view('admin/admin_editor.php', $data);
 	}
 
 	//Berfungsi untuk menampilkan halaman admin bagian komentar (sementara sebelum dipindahkan ke controller masing-masing)
 	public function tampil_admin_komentar()
 	{
-		$data["komentar"] = $this->komentar_mdl->getAll();
-		$this->load->view('table/tablekomentar.php', $data);
+		$data = array(
+			'komentar' => $this->Komentar->getAll('komentar')->result()
+		);
+		$this->load->view('admin/admin_komentar.php', $data);
 	}
 
 	//Berfungsi untuk menampilkan halaman index

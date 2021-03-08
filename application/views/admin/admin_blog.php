@@ -20,7 +20,7 @@
       <div class="container">
           <div class="row">
               <!--Sidebar admin-->
-              <div class="col">
+              <div class="col-md-3">
                   <?php $this->load->view('admin/_partials/sidebaradm.php') ?>
               </div>
 

@@ -5,25 +5,32 @@
             <th>Judul Blog</th>
             <th>Nama Editor</th>
             <th>Isi</th>
+            <th>Fungsi</th>
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($blog as $blog): ?>
+        <?php foreach ($blog as $s) { ?>
         <tr>
             <td width="150">
-                <?php echo $id_blog->id_blog ?>
+                <?php echo $s->id_blog ?>
             </td>
-            <td>
-                <?php echo $judul->judul_blog ?>
+            <td width="150">
+                <?php echo $s->judul_blog ?>
+            </td>
+            <td width="150">
+                <?php echo $s->nama_editor ?>
+            </td>
+            <td width="150">
+                <?php echo $s->isi_blog ?>
             </td>
             <td width="250">
-                <a href="<?php echo site_url('admin/blog/edit/'.$id_blog->id_blog) ?>"
+                <a href="<?php echo site_url('admin/blog/edit/'.$s->id_blog) ?>"
                     class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
-                <a onclick="deleteConfirm('<?php echo site_url('admin/blog/delete/'.$product->product_id) ?>')"
+                <a onclick="deleteConfirm('<?php echo site_url('admin/blog/delete/'.$s->id_blog) ?>')"
                                                 href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
             </td>
 	    </tr>
-	    <?php endforeach; ?>
+	    <?php } ?>
 
 	</tbody>
 </table>
