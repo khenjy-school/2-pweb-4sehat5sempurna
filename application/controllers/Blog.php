@@ -41,27 +41,25 @@ class Blog extends CI_Controller
 
 		);
 		$this->Blog_mdl->save('blog', $data);
-		redirect('main/tampil_admin', 'refresh');
+	}
+
+	public function tampil_editblog($id_blog)
+	{
+		$data['blog'] = $this->Blog_mdl->getById($id_blog);
+		$this->load->view('admin/admin_editblog.php', $data);
 	}
 
 	//Berfungsi untuk mengedit blog melalui form edit pada halaman utama editor ataupun form edit blog pada halaman admin
-	public function edit($id)
+	public function edit($id_blog)
 	{
-		$where = array('id_blog' => $id);
-		$data['user'] = $this->Blog_mdl->edit_blog($where, 'user')->result();
-		$this->load->view('form_edit', $data);
+		$data = $this->Blog_mdl->get_ById($id_blog);
+		redirect('blog/update', 'refresh');
 	}
 
 	//Berfungsi untuk mengupdate blog setelah proses edit melalui form edit pada halaman utama editor ataupun form edit blog pada halaman admin selesai
 	public function update()
 	{
-		$data = array(
-			'judul_blog' => 'txtjudul',
-			'nama_editor'  => 'txteditor',
-			'isi_blog'  => 'txtisi'
-		);
-		
-		$this->db->update('blog', $data);
+		$this->Blog_mdl->update($id_blog);
 		
 		// Executes: REPLACE INTO blog (judul_blog, nama_editor, isi_blog) VALUES ('txtjudul', 'txteditor', 'txtisi')
 	}
@@ -71,6 +69,7 @@ class Blog extends CI_Controller
 	{
 		$where = array('id_blog' => $id);
 		$this->Blog_mdl->delete($where, '');
+		redirect('main/tampil_admin_blog', 'refresh');
 	}
 }
 

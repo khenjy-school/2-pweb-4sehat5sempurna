@@ -19,9 +19,10 @@ class Blog_mdl extends CI_Model
 	}
 
 	//Berfungsi untuk mengambil satu data dari hasil query
-	public function getById($id_blog)
+	public function getById($id)
 	{
 		return $this->db->get_where($this->_table, ["id_blog" => $id_blog])->row();
+		redirect('blog/update', 'refresh');
 	}
 
 	//Berfungsi untuk menyimpan data pada tabel blog
@@ -32,12 +33,10 @@ class Blog_mdl extends CI_Model
 	}
 
 	//Berfungsi untuk melakukan update data pada tabel blog
-	public function update()
+	public function update($id_blog)
 	{
-		$this->db->where($where);
-		$this->db->update($table, $data);
-
-		return $this->db->update('_table', $data);
+		return $this->db->update($_table, $data);
+		redirect('main/tampil_admin_blog', 'refresh');
 	}
 
 	//Berfungsi untuk menghapus data pada tabel blog

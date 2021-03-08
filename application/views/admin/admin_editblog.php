@@ -15,12 +15,12 @@
           <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
             <div class ="row">
               <div class="col pt-md-2 pt-md-3 mb-3 border-bottom">
-                <h1>Tambah Blog</h1>
+                <h1>Edit Blog</h1>
               </div>
             </div>
             <div class="row">
               <div>
-                <?php $this->load->view('admin/_partials/blog/form_addblog.php') ?>
+                <?php $this->load->view('admin/_partials/blog/form_editblog.php') ?>
               </div>
             </div>
           </main>

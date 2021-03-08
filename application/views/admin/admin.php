@@ -7,15 +7,19 @@
   <body>
       <?php $this->load->view('admin/_partials/headeradm.php') ?>
 
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
-          <div class="col-md-3">
-            <?php $this->load->view('admin/_partials/sidebaradm.php') ?>
-          </div>
-
-          <div class="col">
-            Dashboard
-          </div>
+          <?php $this->load->view('admin/_partials/sidebaradm.php') ?>
+          <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <div class ="row">
+              <div class="col pt-md-2 pb-md-3 mb-3 border-bottom">
+                <h1>Dashboard</h1>
+              </div>
+            </div>
+            <div class="row">
+              Keterangan : halaman ini memuat data-data umum seputar 4 sehat 5 sempurna.
+            </div>
+          </main>
         </div>
       </div>
   
