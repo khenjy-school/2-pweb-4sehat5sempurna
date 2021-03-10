@@ -19,7 +19,7 @@
               </div>
             </div>
             <div class="row">
-              <div>
+              <div class="col-6">
                 <?php $this->load->view('admin/_partials/blog/form_editblog.php') ?>
               </div>
             </div>

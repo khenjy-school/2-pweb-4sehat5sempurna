@@ -19,7 +19,7 @@ class Blog_mdl extends CI_Model
 	}
 
 	//Berfungsi untuk mengambil satu data dari hasil query
-	public function getById($id)
+	public function getById($id_blog)
 	{
 		return $this->db->get_where($this->_table, ["id_blog" => $id_blog])->row();
 		redirect('blog/update', 'refresh');
@@ -28,21 +28,23 @@ class Blog_mdl extends CI_Model
 	//Berfungsi untuk menyimpan data pada tabel blog
 	public function save($_table, $data)
 	{
-		$this->db->insert('blog', $data);
+		$this->db->insert($_table, $data);
 		redirect('main/tampil_admin_blog', 'refresh');
 	}
 
 	//Berfungsi untuk melakukan update data pada tabel blog
-	public function update($id_blog)
+	public function update($id_blog, $data)
 	{
-		return $this->db->update($_table, $data);
+		$this->db->where('id_blog', $id_blog);
+		$this->db->update('blog', $data);
 		redirect('main/tampil_admin_blog', 'refresh');
 	}
 
 	//Berfungsi untuk menghapus data pada tabel blog
-	public function delete()
+	public function delete($id_blog)
 	{
-		$this->db->where($id_blog);
-		return $this->db->delete($this->_table, array("id_blog" => $id_blog));
+		$this->db->where('id_blog', $id_blog);
+		$this->db->delete('blog');
+		redirect('main/tampil_admin_blog', 'refresh');
 	}
 }

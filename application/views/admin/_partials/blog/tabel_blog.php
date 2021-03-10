@@ -11,23 +11,22 @@
     <tbody>
         <?php foreach ($blog as $s) { ?>
         <tr>
-            <td width="150">
+            <td width="100px">
                 <?php echo $s->id_blog ?>
             </td>
-            <td width="150">
+            <td width="200px">
                 <?php echo $s->judul_blog ?>
             </td>
-            <td width="150">
+            <td width="150px">
                 <?php echo $s->nama_editor ?>
             </td>
-            <td width="150">
+            <td width="400px">
                 <?php echo $s->isi_blog ?>
             </td>
             <td width="250">
-                <a href=".base_url('blog/tampil_editblog'.$s['id_blog'])."
-                    class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
-                <a onclick="deleteConfirm('.base_url('blog/delete'.$s['id_blog']).')"
-                                                href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
+                <a class="btn btn-warning text-white" href="<?php echo site_url('blog/edit/'.$s->id_blog) ?>">Edit</a>
+
+                <a class="btn btn-danger text-white" href="<?php echo site_url('blog/delete/'.$s->id_blog) ?>">Hapus</a>
             </td>
 	    </tr>
 	    <?php } ?>
