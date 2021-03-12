@@ -13,7 +13,6 @@
     <div class="form-group">
       <label for="isi">Isi</label>
       <input type="text" class="form-control" name="txtisi" id="isi" aria-describedby="helpId" placeholder="masukkan isi di sini">
-      <small for="txtisi">test</small>
     </div>
 
     <div class="form-group">

@@ -18,7 +18,7 @@ class Editor extends CI_Controller
 	{
 		//tampung data di array
 		$data = array(
-			'id_editor' => '';	//tambah id otomatis di database
+			'id_editor' => '',	//tambah id otomatis di database
 			'nama' => $this->input->post(''),
 			'email' => $this->input->post(''),
 			'password' => $this->input->post(''),

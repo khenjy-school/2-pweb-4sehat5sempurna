@@ -11,19 +11,19 @@
     <tbody>
         <?php foreach ($blog as $s) { ?>
         <tr>
-            <td width="100px">
+            <td width="15%">
                 <?php echo $s->id_blog ?>
             </td>
-            <td width="200px">
+            <td width="20%">
                 <?php echo $s->judul_blog ?>
             </td>
-            <td width="150px">
+            <td width="20%">
                 <?php echo $s->nama_editor ?>
             </td>
-            <td width="400px">
+            <td width="25%">
                 <?php echo $s->isi_blog ?>
             </td>
-            <td width="250">
+            <td width="20%">
                 <a class="btn btn-warning text-white" href="<?php echo site_url('blog/edit/'.$s->id_blog) ?>">Edit</a>
 
                 <a class="btn btn-danger text-white" href="<?php echo site_url('blog/delete/'.$s->id_blog) ?>">Hapus</a>
