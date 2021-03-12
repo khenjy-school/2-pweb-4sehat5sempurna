@@ -5,7 +5,7 @@
 class Komentar extends CI_Controller
 {
 	
-	function __construct(argument)
+	function __construct()
 	{
 		parent::__construct();
 		$this->load->model('Komentar_mdl');

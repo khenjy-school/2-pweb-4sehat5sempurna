@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'):?>
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 <div class="hlm_single" id="latar">
 	<h2>Tambahkan Artikel</h2>h2><hr/>
 	<div style="color:red;"><?php echo validation_errors(); ?></div>
