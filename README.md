@@ -52,7 +52,7 @@ Berisi folder-folder yang digunakan sebagai bahan dari web.
    - checkboxfill.svg
 
 3. img
-   Berisi gambar-gambar berekstensi jpg atau png untuk digunakan dalam website \* \* \* \* \* \*
+   Berisi gambar-gambar yang digunakan dalam website (.png .jpg .jpeg .svg)
 
 ### controllers
 
