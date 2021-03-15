@@ -2,7 +2,7 @@
 
 ## Projek Pemrograman Web Kelas XI RPL
 
-Dokumentasi ini berisi hal-hal yang berhubungan dengan projek 4 Sehat 5 Sempurna.
+> Dokumentasi ini berisi hal-hal yang berhubungan dengan projek 4 Sehat 5 Sempurna.
 
 Anggota Kelompok :
 
@@ -14,22 +14,20 @@ Anggota Kelompok :
 Tema Pekerjaan Kelompok : Website Pembuat Blog
 
 Link Edit Desain Figma : <https://www.figma.com/file/159sp4lSnyMxjDbbn0s5Rb/4-Sehat-5-Sempurna>
-
-Berisi desain yang sedang dikerjakan oleh kelompok ini.
+> Berisi desain yang sedang dikerjakan oleh kelompok ini.
 
 Link Repository Data Projek : <https://github.com/Prog-Web-XI-RPL/4sehat5sempurna-data>
-
-Berisi bahan-bahan yang akan dipakai dalam repository noirr.
+> Berisi bahan-bahan yang akan dipakai dalam repository noirr.
 
 Link Repository Projek : <https://github.com/Prog-Web-XI-RPL/4sehat5sempurna>
 
-Berisi projek yang sedang dikerjakan oleh kelompok ini.
+> Berisi projek yang sedang dikerjakan oleh kelompok ini.
 
 ## Keterangan Isi Folder yang dipakai Dalam Repository Noirr
 
 ### assets
 
-Berisi folder-folder yang digunakan sebagai bahan dari web.
+> Berisi folder-folder yang digunakan sebagai bahan dari web.
 
 1. css
    > Berisi css-css yang digunakan dalam membuat desain
@@ -52,7 +50,7 @@ Berisi folder-folder yang digunakan sebagai bahan dari web.
    - checkboxfill.svg
 
 3. img
-   Berisi gambar-gambar yang digunakan dalam website (.png .jpg .jpeg .svg)
+   > Berisi gambar-gambar yang digunakan dalam website (.png .jpg .jpeg .svg)
 
 ### controllers
 
@@ -75,7 +73,7 @@ Berisi folder-folder yang digunakan sebagai bahan dari web.
 ### views
 
 1. admin
-   Berisi halaman-halaman yang ditujukan untuk admin saja
+   > Berisi halaman-halaman yang ditujukan untuk admin saja
    - application\views\admin\_partials
       1. application\views\admin\_partials\blog
          - application\views\admin\_partials\blog\data_blog.php
@@ -99,7 +97,7 @@ Berisi folder-folder yang digunakan sebagai bahan dari web.
       7. application\views\admin\_partials\sidebaradm.php
 
 2. editor
-   Berisi halaman-halaman yang ditujukan untuk editor saja
+   > Berisi halaman-halaman yang ditujukan untuk editor saja
    - application\views\editor\_partials
       1. application\views\editor\_partials\editor_blog.php
       2. application\views\editor\_partials\footer.php
@@ -113,7 +111,7 @@ Berisi folder-folder yang digunakan sebagai bahan dari web.
    - application\views\editor\editor.php
 
 3. Public
-   Berisi halaman-halaman yang ditujukan untuk publik
+   > Berisi halaman-halaman yang ditujukan untuk publik
    - application\views\public\_partials
       1. application\views\public\_partials\footer.php
       2. application\views\public\_partials\form_addkomentar.php
