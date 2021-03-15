@@ -14,12 +14,15 @@ Anggota Kelompok :
 Tema Pekerjaan Kelompok : Website Pembuat Blog
 
 Link Edit Desain Figma : <https://www.figma.com/file/159sp4lSnyMxjDbbn0s5Rb/4-Sehat-5-Sempurna>
+
 Berisi desain yang sedang dikerjakan oleh kelompok ini.
 
 Link Repository Data Projek : <https://github.com/Prog-Web-XI-RPL/4sehat5sempurna-data>
+
 Berisi bahan-bahan yang akan dipakai dalam repository noirr.
 
 Link Repository Projek : <https://github.com/Prog-Web-XI-RPL/4sehat5sempurna>
+
 Berisi projek yang sedang dikerjakan oleh kelompok ini.
 
 ## Keterangan Isi Folder yang dipakai Dalam Repository Noirr
