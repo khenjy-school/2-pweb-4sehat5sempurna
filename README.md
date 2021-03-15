@@ -32,12 +32,12 @@ Berisi projek yang sedang dikerjakan oleh kelompok ini.
 Berisi folder-folder yang digunakan sebagai bahan dari web.
 
 1. css
-   Berisi css-css yang digunakan dalam membuat desain
+   > Berisi css-css yang digunakan dalam membuat desain
    - 4s5s.css
    - 4s5s.min.css
 
 2. icon
-   Berisi icon-icon yang digunakan sebagai button, berekstensi svg
+   > Berisi icon-icon yang digunakan sebagai button, berekstensi svg
    - btnprofile.svg
    - btnback.svg
    - btnforward.svg
