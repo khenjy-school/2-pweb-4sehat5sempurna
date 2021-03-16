@@ -5,20 +5,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  */
 class Editor_mdl extends CI_Model
 {
+	private $_table = 'blog';
+
+	public $id_blog;
+    public $judul_blog;
+    public $nama_editor;
+    public $isi_blog;
+
 	//Berfungsi untuk mengambil data hasil query
-	public function getAll()
+	public function getAll($_table)
 	{
-		return $this->db->get($this->table)->result();
+		return $this->db->get($_table);
 	}
 
 	//Berfungsi untuk mengambil satu data dari hasil query
-	public function getById($id)
+	public function getById($id_blog)
 	{
-		return $this->db->get_where($this->table, ["id_editor" => $id])->row();
+		return $this->db->get_where($this->_table, ["id_blog" => $id_blog])->row();
+		redirect('blog/update', 'refresh');
 	}
 
 	//Berfungsi untuk
-	public function save()
+	public function save($_table, $data)
 	{
         return $this->db->insert('editor', $data);
 	}

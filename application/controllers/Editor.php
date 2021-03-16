@@ -3,13 +3,13 @@
 /**
  * 
  */
-class Editor extends CI_Controller
+class editor extends CI_Controller
 {
 	
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model('EditorMdl');
+		$this->load->model('editorMdl');
 		$this->load->helper('url');
 	}
 
@@ -26,27 +26,39 @@ class Editor extends CI_Controller
 			'tglgabung' => $this->input->post('')
 		);
 
-		$this->EditorMdl->add_editor($data);
-		$this->EditorMdl->jmlh_editor($data);
+		$this->editorMdl->add_editor($data);
+		$this->editorMdl->jmlh_editor($data);
+	}
+
+	public function tampil_addeditor()
+	{
+		$this->load->view('admin/admin_addeditor');
 	}
 
 
 	//Berfungsi untuk menambah editor melalui tabel pada halaman admin bagian editor
 	public function admin_tambah()
 	{
-
+		$data = array(
+			'id_editor' => '',
+			'judul_editor' => $this->input->post('txtjudul'),
+			'nama_editor' => $this->input->post('txteditor'),
+			'isi_editor' => $this->input->post('txtisi')
+		);
+		$this->editor_mdl->save('editor', $data);
 	}
 
 	//Berfungsi untuk masuk ke akun editor melalui halaman login
-	public function login() //cek editor
+	
+	public function login() 
 	{
 		$username = $this->input->post('txtnama');
 		$password = $this->ipput->post('txtpassword');
 
-		$cek_editor = $this->EditorMdl->cek_editor('editor', array("nama" => $username))->num_rows();
+		$cek_editor = $this->editorMdl->cek_editor('editor', array("nama" => $username))->num_rows();
 		//fungsi num_rows mengembalikan jumlah record
 		if ($cek_editor > 0) {
-			$cek_pass =  $this->EditorMdl->cek_editor('editor', array("password" => $password))->num_rows();
+			$cek_pass =  $this->editorMdl->cek_editor('editor', array("password" => $password))->num_rows();
 			if ($cek_pass > 0) {
 				echo "<script>alert('Berhasil Login!')</sccript>";
 				redirect(site_url,'editor');
@@ -69,47 +81,32 @@ class Editor extends CI_Controller
 		redirect('login');
 	}
 
-
-	//Berfungsi untuk menampilkan tabel editor melalui halaman admin bagian editor
-	public function getAll()
-	{
-		$data = array(
-			"konten" => "admin/"
-		)
-		$data[''] = $this->EditorMdl->tampil_data()->result(); 
-		redirect('main/tampil_admin', 'refresh')
-	}
-
-	//Berfungsi untuk menampilkan tabel
-	public function getById()
-	{
-		$query = $this->db->get_where('', array('id' => $id), $limit, $offset);
-	}
-
-
 	//Berfungsi untuk mengedit data editor melalui halaman setting pada halaman editor maupun melalui form pada halaman admin bagian editor
 	public function edit()
 	{
-		
+		if(isset($_POST['btnsimpan'])) {
+			$data = array(
+				'id_editor' =>$this->input->post('txtideditor'),
+				'judul_editor' => $this->input->post('txtjudul'),
+				'nama_editor' => $this->input->post('txtnama'),
+				'isi_editor' => $this->input->post('txtisi')
+
+			);
+			//Berfungsi untuk mengupdate editor setelah proses edit melalui form edit pada halaman utama editor ataupun form edit editor pada halaman admin selesai
+			$this->editor_mdl->update($id_editor, $data);
+			// Executes: REPLACE INTO editor (judul_editor, nama_editor, isi_editor) VALUES ('txtjudul', 'txteditor', 'txtisi')
+		}
+
+		else{
+			$data['editor'] = $this->editor_mdl->getById($id_editor);
+			$this->load->view('admin/admin_editeditor.php', $data);
+		}
 	}
-
-
-	//Berfungsi untuk mengupdate editor setelah proses edit melalui form edit pada halaman setting editor ataupun form edit pada halaman admin bagian editor selesai
-	public function update()
-	{
-
-	}
-
 
 	//Berfungsi untuk menghapus data editor melalui tabel editor pada halaman admin bagian editor
-	public function delete($id=null)
+	public function delete($id_editor)
 	{
-		if ($this->main->delete_editor($id_editor)) {
-			redirect(site_url,'admin/editor');
-		}else{
-			echo "<script>alert('Tidak ada data yang dihapus')</sccript>"
-			redirect(site_url, 'admin/editor');
-		}
+		$this->editor_mdl->delete($id_editor);
 	}
 }
 	

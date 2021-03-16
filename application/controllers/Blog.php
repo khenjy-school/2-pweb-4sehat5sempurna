@@ -1,30 +1,10 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 /**
  * 
  */
 class Blog extends CI_Controller
 {
-	
-	function __construct()
-	{
-		parent::__construct();
-		$this->load->model('Blog_mdl');
-		$this->load->helper('url');
-	}
-
-	//Bergungsi untuk menambah blog pada halaman editor
-	public function tambah()
-	{
-		$data = array(
-			'id_blog' => '',
-			'judul_blog' => $this->input->post('txtjudul'),
-			'nama_editor' => $this->input->post('txteditor'),
-			'isi_blog' => $this->input->post('txtisi')
-		);
-		$this->Blog_mdl->save('blog', $data);
-		redirect('main/tampil_admin_blog', 'refresh');
-	}
-
 	public function tampil_addblog()
 	{
 		$this->load->view('admin/admin_addblog');
@@ -66,7 +46,8 @@ class Blog extends CI_Controller
 	}
 
 	//Berfungsi untuk menghapus tabel editor melalui halaman setting pada editor ataupun pada halaman admin bagian editor
-	public function delete($id_blog){
+	public function delete($id_blog)
+	{
 		$this->Blog_mdl->delete($id_blog);
 	}
 }
