@@ -3,7 +3,8 @@
     <div class="form-group">
       <label for="judul">Id Blog</label>
       <input type="text"
-        class="form-control" disabled name="txtidblog" id="id" aria-describedby="helpId" placeholder="masukkan isi di sini" value="<?php echo $blog->id_blog ?>">
+        class="form-control" disabled name="txtidblog" id="id" aria-describedby="helpId" placeholder="masukkan isi di sini" value="<?php echo 
+        $blog->id_blog ?>">
     </div>
 
     <div class="form-group">

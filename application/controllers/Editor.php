@@ -9,7 +9,7 @@ class editor extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model('editorMdl');
+		$this->load->model('Editor_mdl');
 		$this->load->helper('url');
 	}
 

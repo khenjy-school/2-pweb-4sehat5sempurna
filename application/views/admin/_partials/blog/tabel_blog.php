@@ -25,7 +25,7 @@
             </td>
             <td width="20%">
                 <a class="btn btn-warning text-white" href="<?php echo site_url('blog/edit/'.$s->id_blog) ?>">Edit</a>
-
+                
                 <a class="btn btn-danger text-white" href="<?php echo site_url('blog/delete/'.$s->id_blog) ?>">Hapus</a>
             </td>
 	    </tr>

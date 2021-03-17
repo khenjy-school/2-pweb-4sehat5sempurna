@@ -22,7 +22,7 @@ class Blog_mdl extends CI_Model
 	public function getById($id_blog)
 	{
 		return $this->db->get_where($this->_table, ["id_blog" => $id_blog])->row();
-		redirect('blog/update', 'refresh');
+		redirect('blog/edit', 'refresh');
 	}
 
 	//Berfungsi untuk menyimpan data pada tabel blog

@@ -6,11 +6,11 @@
     <title>Admin</title>
   </head>
   <body>
-      <?php $this->load->view('admin/_partials/headeradm.php') ?>
+      <?php $this->load->view('admin/_partials/navbar.php') ?>
 
       <div class="container-fluid">
         <div class="row">
-          <?php $this->load->view('admin/_partials/sidebaradm.php') ?>
+          <?php $this->load->view('admin/_partials/sidebar.php') ?>
           <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
             <div class ="row">
               <div class="col pt-md-2 pt-md-3 mb-3 border-bottom">
@@ -22,12 +22,15 @@
                 <?php $this->load->view('admin/_partials/blog/tabel_blog.php') ?>
               </div>
             </div>
+            <div class="row">
+              <?php $this->load->view('admin/_partials/footer.php') ?>
+            </div>
           </main>
         </div>
       </div>
       
   
-    <?php $this->load->view('admin/_partials/footeradm.php') ?>
+    
 
 
 
