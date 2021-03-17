@@ -3,7 +3,7 @@
   <head>
     <?php $this->load->view('admin/_partials/head.html') ?>
 
-    <title>Admin</title>
+    <title>Admin - Blog</title>
   </head>
   <body>
       <?php $this->load->view('admin/_partials/navbar.php') ?>
