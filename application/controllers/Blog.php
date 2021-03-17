@@ -18,14 +18,13 @@ class Blog extends CI_Controller
 	}
 
 	//Berfungsi untuk menambah blog melalui tabel pada halaman admin bagian blog
-	public function admin_tambah()
+	public function tambah()
 	{
 		$data = array(
 			'id_blog' => '',
 			'judul_blog' => $this->input->post('txtjudul'),
 			'nama_editor' => $this->input->post('txteditor'),
 			'isi_blog' => $this->input->post('txtisi')
-
 		);
 		$this->Blog_mdl->save('blog', $data);
 	}

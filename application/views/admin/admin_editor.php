@@ -1,120 +1,36 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS Online -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <!--Bootstrap CSS Offline-->
-    <!--<link rel="stylesheet" href="cssbotstrap/botstrap.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">--> 
-
+    <?php $this->load->view('admin/_partials/head.html') ?>
 
     <title>Admin</title>
   </head>
   <body>
-      <?php $this->load->view('admin/_partials/headeradm.php') ?>
+      <?php $this->load->view('admin/_partials/navbar.php') ?>
 
-    <div class="container">
-      <div class="row">
-
-        <!--Navigasi Admin-->
-        <div class="col-md-2">
-          <div class="row">
-            logo 4 sehat 5 sempurna
-          </div>
-          <div class="row">
-            dashboard
-          </div>
-          <div class="row">
-            Daftar Editor
-          </div>
-          <div class="row">
-            Jumlah Blog
-          </div>
-          <div class="row">
-            Jumlah Viewer
-          </div>
-          <div class="row">
-            Jumlah Komentar
-          </div>
-        </div>
-
-        <!--Isi Konten-->
-        <div class="col-md-10">
-
-          <!--Barisan atas untuk search-->
-          <div class="row">
-            <div class="form-inline">
-              
+      <div class="container-fluid">
+        <div class="row">
+          <?php $this->load->view('admin/_partials/sidebar.php') ?>
+          <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <div class ="row">
+              <div class="col pt-md-2 pt-md-3 mb-3 border-bottom">
+                <h1>Editor</h1>
+              </div>
             </div>
-          </div>
-
-          <div>
-        </div>
-
-          <!--Barisan bawah untuk background-->
-          <div class="row">
-            <!--Barisan isi untuk daftar-->
             <div class="row">
-
-              <!--Daftar barisan 1-->
-              <div class="col">
-
-                <!--Jumlah Editor-->
-                <div class="card">
-                  <h2>Jumlah Editor</h2>
-                  <span></span>
-                </div>
-
-                <!--Jumlah Komentar-->
-                <div class="card">
-                  <h2>Jumlah Komentar</h2>
-                  <span></span>
-                </div>
+              <div class="col-11">
+                <?php $this->load->view('admin/_partials/editor/tabel_editor.php') ?>
               </div>
-
-              <!--Daftar barisan 2-->
-              <div class="col">
-                <!--Jumlah Blog-->
-                <div class="card">
-                  <h2>Jumlah Blog</h2>
-                  <span></span>
-                </div>
-              </div>
-
-              <!--Daftar barisan 3-->
-              <div class="col">
-                <!--Jumlah Viewer-->
-                <div class="card">
-                  <h2>Jumlah Viewer</h2>
-                  <span></span>
-                </div>
-              </div>
-
             </div>
-
-            <!--Barisan isi untuk lainnya-->
             <div class="row">
-              <div>
-                
-              </div>
+              <?php $this->load->view('admin/_partials/footer.php') ?>
             </div>
-          </div>
+          </main>
         </div>
       </div>
-    </div>
-  
-    <?php $this->load->view('admin/_partials/footeradm.php') ?>
 
 
 
-
-
-
-
- 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

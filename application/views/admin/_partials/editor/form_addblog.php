@@ -1,5 +1,5 @@
 <!--Form Tambah Blog Pada Halaman Editor-->
-<form class="" action="<?php base_url('blog/edit') ?>" method="POST">
+<form action="<?= site_url('blog/tambah'); ?>" method="POST">
     <div class="form-group">
       <label for="judul">Judul</label>
       <input type="text"
@@ -19,6 +19,8 @@
     </div>
 
     <div class="form-group">
-      <input class="btn btn-success" type="submit" name="btnsimpan" value="Simpan" />
+      <a class="btn btn-secondary" href="<?php echo site_url('main/tampil_admin_blog'); ?>" name="btnback">BACK</a>
+      <button class="btn btn-success" type="submit" name="btnsimpan">SUBMIT</button>
+      <button class="btn btn-danger" type="reset" name="btnreset">RESET</button>
     </div>
 </form>

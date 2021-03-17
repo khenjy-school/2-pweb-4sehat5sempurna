@@ -5,12 +5,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  */
 class Editor_mdl extends CI_Model
 {
-	private $_table = 'blog';
+	private $_table = 'editor';
 
-	public $id_blog;
-    public $judul_blog;
-    public $nama_editor;
-    public $isi_blog;
+	public $id_editor;
+    public $nama;
+    public $email;
+    public $password;
+	public $telp;
+	public $tglgabung;
 
 	//Berfungsi untuk mengambil data hasil query
 	public function getAll($_table)
@@ -19,35 +21,33 @@ class Editor_mdl extends CI_Model
 	}
 
 	//Berfungsi untuk mengambil satu data dari hasil query
-	public function getById($id_blog)
+	public function getById($id_editor)
 	{
-		return $this->db->get_where($this->_table, ["id_blog" => $id_blog])->row();
-		redirect('blog/update', 'refresh');
+		return $this->db->get_where($this->_table, ["id_editor" => $id_editor])->row();
+		redirect('editor/edit', 'refresh');
 	}
 
 	//Berfungsi untuk
 	public function save($_table, $data)
 	{
-        return $this->db->insert('editor', $data);
+        $this->db->insert('editor', $data);
+		redirect('main/tampil_admin_editor', 'refresh');
 	}
 
 	//Berfungsi untuk
-	public function update()
+	public function update($id_editor, $data)
 	{
-		$data = array(
-			'nama' => $nama,
-			'password' => $password,
-			'tglgabung' => $tglgabung
-		);
-		$this->db->where('id', $id);
+		$this->db->where('id_editor', $id_editor);
 		$this->db->update('editor', $data);
+		redirect('main/tampil_admin_editor', 'refresh');
 	}
 
 	//Berfungsi untuk
-	public function delete($id)
+	public function delete($id_editor)
 	{
-		$this->db->where('id', $id);
+		$this->db->where('id_editor', $id_editor);
 		$this->db->delete('editor');
+		redirect('main/tampil_admin_editor', 'refresh');
 	}
 
 	//Berfungsi untuk menghitung jumlah editor

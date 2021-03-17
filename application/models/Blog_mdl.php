@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  */
 class Blog_mdl extends CI_Model
 {
-	
+	private $_table = 'blog';
 
 	public $id_blog;
     public $judul_blog;

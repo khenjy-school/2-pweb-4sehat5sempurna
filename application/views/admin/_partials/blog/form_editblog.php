@@ -1,9 +1,9 @@
 <!--Form Edit Blog Pada Halaman Admin-->
 <form action="" method="POST">
     <div class="form-group">
-      <label for="judul">Id Blog</label>
+      <label for="id">Id Blog</label>
       <input type="text"
-        class="form-control" disabled name="txtidblog" id="id" aria-describedby="helpId" placeholder="masukkan isi di sini" value="<?php echo 
+        class="form-control" disabled name="txtidblog" id="id" aria-describedby="helpId" placeholder="masukkan id di sini" value="<?php echo 
         $blog->id_blog ?>">
     </div>
 
@@ -23,11 +23,10 @@
       <label for="isi">Isi</label>
       <input type="text"
         class="form-control" name="txtisi" id="isi" aria-describedby="helpId" placeholder="masukkan isi di sini" value="<?php echo $blog->isi_blog ?>">
-      <small>Test</small>
     </div>
 
     <div class="form-group">
-      <a class="btn btn-secondary" name="btnback" href="<?php echo site_url('main/tampil_admin_blog')?>">BACK</a>
+      <a class="btn btn-secondary" href="<?php echo site_url('main/tampil_admin_blog'); ?>" name="btnback">BACK</a>
       <button class="btn btn-success" type="submit" name="btnsimpan">SUBMIT</button>
       <button class="btn btn-danger" type="reset" name="btnreset">RESET</button>
     </div>

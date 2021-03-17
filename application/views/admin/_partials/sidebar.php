@@ -26,7 +26,7 @@
                     <span>Editor</span>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                    <a class="dropdown-item" href="<?php echo site_url('blog/tampil_addblog') ?>">New Editor</a>
+                    <a class="dropdown-item" href="<?php echo site_url('editor/tampil_addeditor') ?>">New Editor</a>
                     <a class="dropdown-item" href="<?php echo site_url('main/tampil_admin_editor') ?>">List Editor</a>
                 </div>
             </li>

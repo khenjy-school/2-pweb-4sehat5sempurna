@@ -43,7 +43,7 @@ class Main extends CI_Controller
 	public function tampil_admin_komentar()
 	{
 		$data = array(
-			'komentar' => $this->Komentar->getAll('komentar')->result()
+			'komentar' => $this->Komentar_mdl->getAll('komentar')->result()
 		);
 		$this->load->view('admin/admin_komentar.php', $data);
 	}

@@ -18,7 +18,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-10">
+              <div class="col-11">
                 <?php $this->load->view('admin/_partials/blog/tabel_blog.php') ?>
               </div>
             </div>
