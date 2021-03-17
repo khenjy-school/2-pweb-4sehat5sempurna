@@ -5,12 +5,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  */
 class Blog_mdl extends CI_Model
 {
-	private $_table = 'blog';
+	
 
 	public $id_blog;
     public $judul_blog;
     public $nama_editor;
     public $isi_blog;
+
+	//ini model
 
 	//Berfungsi untuk mengambil data hasil query
 	public function getAll($_table)
