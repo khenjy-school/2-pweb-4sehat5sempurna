@@ -1,4 +1,5 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 /**
  *	Controller main adalah controller yang bertugas untuk mengatur perpindahan antar halaman web.
  *	Gunakan fungsi redirect pada controller
@@ -8,11 +9,45 @@ class Main extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
+		$this->load->model('Admin_mdl');
 		$this->load->model('Blog_mdl');
 		$this->load->model('Editor_mdl');
 		$this->load->model('Komentar_mdl');
 		$this->load->helper('url');
 	}
+
+	public function login()
+    {
+        if(isset($_POST['btnlogin'])) {
+			$email = $this->input->post('txtemail');
+            $password = $this->input->post('txtpassword');
+			
+			$kondisi = array(
+				'email' => $email,
+				'password' => $password
+			);
+            $cek_user = $this->Admin_mdl->cek_data('admin', $kondisi);
+
+            if($cek_user->num_rows() > 0){
+                $data = $cek_user->result();
+				$login = array(
+					'email' => $email,
+					'status' => 'active'
+				);
+
+				$this->session->set_userdata('admin', $login);
+
+				redirect('main/tampil_admin');
+            }
+            else{
+                echo "email tidak ditemukan";
+                $this->load->view('admin/login.php');
+            }
+		}
+		else{
+			$this->load->view('admin/login.php');
+		}
+    }
 
 	//Berfungsi untuk menampilkan halaman utama admin (dashboard)
 	public function tampil_admin()

@@ -4,7 +4,7 @@
     <?php $this->load->view('admin/_partials/head.html') ?>
 
 
-    <title>Tambah Blog</title>
+    <title>Admin - Settings</title>
   </head>
   <body>
       <?php $this->load->view('admin/_partials/navbar.php') ?>

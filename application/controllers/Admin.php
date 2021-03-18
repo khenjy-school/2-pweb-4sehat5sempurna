@@ -8,7 +8,7 @@ class Blog extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model('Blog_mdl');
+		$this->load->model('Admin_mdl');
 		$this->load->helper('url');
 	}
 
@@ -30,9 +30,9 @@ class Blog extends CI_Controller
 		}
 	}
 
-    public function login()
+    public function login($id_admin = null)
     {
-        if(isset($_POST['btnsimpan'])) {
+        if(isset($_POST['btnlogin'])) {
 			$email = $this->input->post('txtemail');
             $password = $this->input->post('txtpassword');
 
@@ -43,7 +43,7 @@ class Blog extends CI_Controller
 
                 if($cek_pass > 0){
                     echo "<script>alert('berhasil login')</script>";
-                    redirect(site_url('main/tampil_admin'));
+                    $this->load->view('admin/admin.php');
                 }
                 else{
                     echo "<script>alert('password salah')</script>";
@@ -56,7 +56,7 @@ class Blog extends CI_Controller
             }
 		}
 		else{
-			return $this->load->view('admin/login.php');
+			$this->load->view('admin/login', 'refresh');
 		}
     }
 

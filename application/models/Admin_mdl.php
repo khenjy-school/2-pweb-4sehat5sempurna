@@ -23,15 +23,13 @@ class Admin_mdl extends CI_Model
 	public function getById($id_admin)
 	{
 		return $this->db->get_where($this->_table, ["id_admin" => $id_admin])->row();
-		redirect('admin/edit', 'refresh');
+		redirect('admin/', 'refresh');
 	}
 
     //Berfungsi untuk mengambil satu data dari hasil query
-	public function cek_data($id_admin)
+	public function cek_data($_tabel, $kondisi)
 	{
-        $this->db->where('id_admin', $id_admin);
-		return $this->db->get_where($_table, $id_admin);
-		redirect('admin/edit', 'refresh');
+		return $this->db->get_where($_tabel, $kondisi);
 	}
 
 	//Berfungsi untuk menyimpan akun admin
