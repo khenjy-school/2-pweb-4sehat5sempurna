@@ -31,9 +31,6 @@
           </main>
         </div>
       </div>
-  
-      
-
 
  
     <!-- Optional JavaScript -->

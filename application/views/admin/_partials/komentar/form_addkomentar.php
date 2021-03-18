@@ -11,7 +11,7 @@
     </div>
 	
 	<div class="form-group">
-      <label for="email">email</label>
+      <label for="email">Email</label>
       <input type="email" class="form-control" name="txtemail" id="email" placeholder="masukkan email di sini" aria-describedby="helpId" required="required">
     </div>
 

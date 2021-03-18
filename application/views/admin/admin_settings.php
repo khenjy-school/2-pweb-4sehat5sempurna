@@ -15,7 +15,7 @@
           <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
             <div class ="row">
               <div class="col pt-md-2 pt-md-3 mb-3 border-bottom">
-                <h1>Tambah Blog</h1>
+                <h1>Settings</h1>
               </div>
             </div>
             <div class="row">
@@ -31,7 +31,7 @@
           </main>
         </div>
       </div>
-    
+  
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

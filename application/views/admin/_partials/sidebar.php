@@ -20,7 +20,7 @@
                 </div>
             </li>
             <li class="nav-item dropdown <?php echo $this->uri->segment(2) == 'editor' ? 'active': '' ?>">
-                <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                <a class="nav-link dropdown-toggle" href="#" id="pagesD     ropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">
                     <i class="fas fa-fw fa-boxes"></i>
                     <span class="h5">Editor</span>
@@ -37,7 +37,7 @@
                     <span class="h5">Komentar</span>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                    <a class="dropdown-item" href="<?php echo site_url('komentar/tampil_addkomentar') ?>">New Komentar</a>
+                    <a class="dropdown-item" href="<?php echo site_url('komentar/tambah') ?>">New Komentar</a>
                     <a class="dropdown-item" href="<?php echo site_url('main/tampil_admin_komentar') ?>">List Komentar</a>
                 </div>
             </li>
