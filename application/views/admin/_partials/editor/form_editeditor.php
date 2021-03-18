@@ -43,7 +43,7 @@
     </div>
 
     <div class="form-group">
-      <a class="btn btn-secondary" href="<?php echo site_url('main/tampil_admin_blog'); ?>" name="btnback">BACK</a>
+      <a class="btn btn-secondary" href="<?php echo site_url('main/tampil_admin_editor'); ?>" name="btnback">BACK</a>
       <button class="btn btn-success" type="submit" name="btnsimpan">SUBMIT</button>
       <button class="btn btn-danger" type="reset" name="btnreset">RESET</button>
     </div>

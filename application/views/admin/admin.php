@@ -24,7 +24,9 @@
               Keterangan : halaman ini memuat data-data umum seputar 4 sehat 5 sempurna.
             </div>
             <div class="row">
-              <?php $this->load->view('admin/_partials/footer.php') ?>
+              <div class="col-md">
+                <?php $this->load->view('admin/_partials/footer.php') ?>
+              </div>
             </div>
           </main>
         </div>

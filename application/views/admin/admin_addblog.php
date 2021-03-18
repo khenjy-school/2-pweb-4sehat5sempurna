@@ -19,12 +19,14 @@
               </div>
             </div>
             <div class="row">
-              <div>
+              <div class="col-md-5">
                 <?php $this->load->view('admin/_partials/blog/form_addblog.php') ?>
               </div>
             </div>
             <div class="row">
-              <?php $this->load->view('admin/_partials/footer.php') ?>
+              <div class="col-md">
+                <?php $this->load->view('admin/_partials/footer.php') ?>
+              </div>
             </div>
           </main>
         </div>

@@ -13,17 +13,26 @@
           <?php $this->load->view('admin/_partials/sidebar.php') ?>
           <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
             <div class ="row">
-              <div class="col pt-md-2 pt-md-3 mb-3 border-bottom">
-                <h1>Editor</h1>
+              <div class="col-md pt-md-2 pt-md-3 mb-md-3 border-bottom">
+                <div class="row">
+                  <div class="col-md-auto my-auto">
+                    <span class="h1">Editor</span>
+                  </div>
+                  <div class="col-md-auto my-auto">
+                    <a class="btn btn-success" href="<?php echo site_url('editor/tampil_addeditor'); ?>" name="btntambah">TAMBAH +</a>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="row">
-              <div class="col-11">
+              <div class="col-11 border-bottom">
                 <?php $this->load->view('admin/_partials/editor/tabel_editor.php') ?>
               </div>
             </div>
             <div class="row">
-              <?php $this->load->view('admin/_partials/footer.php') ?>
+              <div class="col-md">
+                <?php $this->load->view('admin/_partials/footer.php') ?>
+              </div>
             </div>
           </main>
         </div>
