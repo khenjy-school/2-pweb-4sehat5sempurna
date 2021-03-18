@@ -19,7 +19,7 @@
                     <span class="h1">Blog</span>
                   </div>
                   <div class="col-md-auto my-auto">
-                    <a class="btn btn-success" href="<?php echo site_url('blog/tampil_addblog'); ?>" name="btntambah">TAMBAH +</a>
+                    <a class="btn btn-success" href="<?php echo site_url('blog/tambah'); ?>">TAMBAH +</a>
                   </div>
                 </div>
               </div>

@@ -28,24 +28,23 @@ class editor extends CI_Controller
 		$this->Editor_mdl->save('editor', $data);
 	}
 
-	public function tampil_addeditor()
-	{
-		$this->load->view('admin/admin_addeditor');
-	}
-
-
 	//Berfungsi untuk menambah editor melalui tabel pada halaman admin bagian editor
 	public function tambah()
 	{
-		$data = array(
-			'id_editor' => '',
-			'nama' => $this->input->post('txtnama'),
-			'email' => $this->input->post('txtemail'),
-			'password' => $this->input->post('txtpassword'),
-			'telp' => $this->input->post('txttelp'),
-			'tglgabung' => $this->input->post('txttglgabung')
-		);
-		$this->Editor_mdl->save('editor', $data);
+		if(isset($_POST['btnsimpan'])) {
+			$data = array(
+				'id_editor' => '',
+				'nama' => $this->input->post('txtnama'),
+				'email' => $this->input->post('txtemail'),
+				'password' => $this->input->post('txtpassword'),
+				'telp' => $this->input->post('txttelp'),
+				'tglgabung' => $this->input->post('txttglgabung')
+			);
+			$this->Editor_mdl->save('editor', $data);
+		}
+		else{
+			$this->load->view('admin/admin_addeditor');
+		}
 	}
 
 	//Berfungsi untuk masuk ke akun editor melalui halaman login

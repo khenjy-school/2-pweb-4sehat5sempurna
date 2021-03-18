@@ -11,22 +11,23 @@ class Blog extends CI_Controller
 		$this->load->model('Blog_mdl');
 		$this->load->helper('url');
 	}
-	
-	public function tampil_addblog()
-	{
-		$this->load->view('admin/admin_addblog');
-	}
 
 	//Berfungsi untuk menambah blog melalui tabel pada halaman admin bagian blog
 	public function tambah()
 	{
-		$data = array(
-			'id_blog' => '',
-			'judul_blog' => $this->input->post('txtjudul'),
-			'nama_editor' => $this->input->post('txteditor'),
-			'isi_blog' => $this->input->post('txtisi')
-		);
-		$this->Blog_mdl->save('blog', $data);
+		if(isset($_POST['btnsimpan'])) {
+			$data = array(
+				'id_blog' => '',
+				'judul_blog' => $this->input->post('txtjudul'),
+				'nama_editor' => $this->input->post('txteditor'),
+				'isi_blog' => $this->input->post('txtisi')
+			);
+			$this->Blog_mdl->save('blog', $data);
+		}
+		else{
+			$this->load->view('admin/admin_addblog');
+		}
+
 	}
 
 	//Berfungsi untuk mengedit blog melalui form edit pada halaman utama editor ataupun form edit blog pada halaman admin
@@ -45,7 +46,7 @@ class Blog extends CI_Controller
 		}
 		else {
 			$data['blog'] = $this->Blog_mdl->getById($id_blog);
-			$this->load->view('admin/admin_editblog.php', $data);
+			$this->load->view('admin/admin_editblog', $data);
 		}
 	}
 

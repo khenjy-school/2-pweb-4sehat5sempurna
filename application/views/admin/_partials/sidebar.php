@@ -15,7 +15,7 @@
                     <span class="h5">Blog</span>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                    <a class="dropdown-item" href="<?php echo site_url('blog/tampil_addblog') ?>">Add Blog</a>
+                    <a class="dropdown-item" href="<?php echo site_url('blog/tambah') ?>">Add Blog</a>
                     <a class="dropdown-item" href="<?php echo site_url('main/tampil_admin_blog') ?>">List Blog</a>
                 </div>
             </li>
@@ -26,7 +26,7 @@
                     <span class="h5">Editor</span>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                    <a class="dropdown-item" href="<?php echo site_url('editor/tampil_addeditor') ?>">New Editor</a>
+                    <a class="dropdown-item" href="<?php echo site_url('editor/tambah') ?>">New Editor</a>
                     <a class="dropdown-item" href="<?php echo site_url('main/tampil_admin_editor') ?>">List Editor</a>
                 </div>
             </li>

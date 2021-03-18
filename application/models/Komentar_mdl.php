@@ -5,36 +5,48 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  */
 class Komentar_mdl extends CI_Model
 {
+	private $_table = 'komentar';
+
+	public $id_komentar;
+    public $judul_blog;
+    public $nama;
+	public $email;
+    public $isi;
+	public $tglkomen;
+	
 	//Berfungsi untuk mengambil data hasil query
-	public function getAll()
+	public function getAll($_table)
 	{
-		return $this->db->get($this->table)>result();
+		return $this->db->get($_table);
 	}
 
 	//Berfungsi untuk mengambil satu data dari hasil query
 	public function getById($id_komentar)
 	{
-		$this->db->where('id_komentar', $id_komentar);
-		return $this->db->get('komentar')->row();
+		return $this->db->get_where($this->_table, ["id_komentar" => $id_komentar])->row();
+		redirect('komentar/edit', 'refresh');
 	}
 
 	//Berfungsi untuk menyimpan data pada tabel komentar
 	public function save($table, $data)
 	{
 		$this->db->insert($table, $data);
+		redirect('main/tampil_admin_komentar', 'refresh');
 	}
 
 	//Berfungsi untuk melakukan update data pada tabel komentar
 	public function update()
 	{
-		$this->db->where($where);
-		$this->db->update($table, $data);
+		$this->db->where('id_komentar', $id_komentar);
+		$this->db->update('komentar', $data);
+		redirect('main/tampil_admin_komentar', 'refresh');
 	}
 
 	//Berfungsi untuk menghapus data pada tabel komentar
 	public function delete()
 	{
-		$this->db->where($where);
-		$this->db->delete($table);
+		$this->db->where('id_komentar', $id_komentar);
+		$this->db->delete('komentar');
+		redirect('main/tampil_admin_komentar', 'refresh');
 	}
 }

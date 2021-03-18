@@ -12,8 +12,6 @@ class Blog_mdl extends CI_Model
     public $nama_editor;
     public $isi_blog;
 
-	//ini model
-
 	//Berfungsi untuk mengambil data hasil query
 	public function getAll($_table)
 	{

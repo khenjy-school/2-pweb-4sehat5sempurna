@@ -19,7 +19,7 @@
                     <span class="h1">Editor</span>
                   </div>
                   <div class="col-md-auto my-auto">
-                    <a class="btn btn-success" href="<?php echo site_url('editor/tampil_addeditor'); ?>" name="btntambah">TAMBAH +</a>
+                    <a class="btn btn-success" href="<?php echo site_url('editor/tambah'); ?>">TAMBAH +</a>
                   </div>
                 </div>
               </div>

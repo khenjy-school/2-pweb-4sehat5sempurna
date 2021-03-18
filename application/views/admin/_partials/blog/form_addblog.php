@@ -17,7 +17,7 @@
 
     <div class="form-group">
       <a class="btn btn-secondary" href="<?php echo site_url('main/tampil_admin_blog'); ?>" name="btnback">BACK</a>
-      <button class="btn btn-secondary" type="reset" name="btnreset">RESET</button>
+      <button class="btn btn-danger" type="reset" name="btnreset">RESET</button>
       <button class="btn btn-success" type="submit" name="btnsimpan">SIMPAN</button>
     </div>
 </form>

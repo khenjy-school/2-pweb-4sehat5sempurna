@@ -1,87 +1,62 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 /**
  * 
  */
 class Komentar extends CI_Controller
 {
-	
 	function __construct()
 	{
 		parent::__construct();
 		$this->load->model('Komentar_mdl');
 		$this->load->helper('url');
 	}
-
-
+	
 	//Berfungsi untuk menambah komentar pada halaman blog
 	public function tambah()
 	{
-		$data = array(
-			'id_komentar' = '',	//tambah id otomatis di database
-			'nama' => $this->input->post(''),
-			'email' => $this->input->post(''),
-			'isi' => $this->input->post(''),
-			'tglkomen' => $this->input->post('')
-		);
-
-		$this->KomentarMdl->add_komentar($data);
-		$this->EditorMdl->jmlh_komentar($data);
-	}
-
-
-	//Berfungsi untuk menambah komentar melalui tabel pada halaman admin bagian komentar
-	public function admin_tambah()
-	{
-
-	}
-
-
-	//Berfungsi untuk mendapatkan tabel
-	public function getALl()
-	{
-		$data = array(
-			"konten" => "admin/"
-		)
-		$data[''] = $this->EditorMdl->tampil_data()->result(); 
-		$this->load->view('admin', $data);
-	}
-
-	//Berfungsi untuk mendapatkan tabel berdasarkan id
-	public function getById()
-	{
-
+		if(isset($_POST['btnsimpan'])) {
+			$data = array(
+				'id_komentar' => '',
+				'judul_blog' => $this->input->post('txtjudulblog'),
+				'nama' => $this->input->post('txtnama'),
+				'email' => $this->input->post('txtemail'),
+				'isi' => $this->input->post('txtisi'),
+				'tglkomen' => $this->input->post('txttglkomentar')
+			);
+			$this->Komentar_mdl->save('komentar', $data);
+		}
+		else{
+			$this->load->view('admin/admin_addkomentar.php');
+		}
 	}
 
 
 	//Berfungsi untuk mengedit komentar melalui form pada halaman blog ataupun melalui form pada halaman admin bagian komentar
-	public function edit()
+	public function edit($id_komentar = null)
 	{
-
+		if(isset($_POST['btnsimpan'])) {
+			$data = array(
+				'id_komentar' => $this->input->post('txtidkomentar'),
+				'judul_blog' => $this->input->post('txtjudulblog'),
+				'nama' => $this->input->post('txtnama'),
+				'email' => $this->input->post('txtemail'),
+				'isi_blog' => $this->input->post('txtisi'),
+				'tglkomen' => $this->input->post('txttglkomentar')
+			);
+			//Berfungsi untuk mengupdate komentar setelah proses edit melalui form edit pada halaman utama editor ataupun form edit blog pada halaman admin selesai
+			$this->Komentar_mdl->update($id_komentar, $data);
+			// Executes: REPLACE INTO komentar (judul_blog, nama, email, isi, tglkomen) VALUES ('txtjudulblog', 'txtnama', 'txtemail', 'txtisi', 'txttglkomentar')
+		}
+		else {
+			$data['blog'] = $this->Blog_mdl->getById($id_blog);
+			$this->load->view('admin/admin_editkomentar.php', $data);
+		}
 	}
-
-
-	//Berfungsi untuk mengupdate komentar setelah proses edit melalui form edit pada halaman blog ataupun form edit pada halaman admin bagian komentar selesai
-	public function update()
-	{
-
-	}
-
 
 	//Berfungsi untuk menghapus data komentar melalui tabel komentar pada halaman admin bagian komentar
-	public function delete($id=null)
+	public function delete($id_komentar)
 	{
-		if (condition) {
-			# code...
-		}
-
-		if ($this->main->delete_editor($id_editor)) {
-			redirect(site_url,'admin/editor');
-		}else{
-			echo "<script>alert('Tidak ada data yang dihapus')</sccript>"
-			redirect(site_url, 'admin/editor');
-		}
+		$this->Komentar_mdl->delete($id_komentar);
 	}
 }
-	
-
-?>

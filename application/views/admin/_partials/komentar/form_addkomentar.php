@@ -1,23 +1,34 @@
 <!--Form Tambah Komentar Pada Halaman Admin-->
-<form action="<?php base_url('komentar/simpan') ?>">
+<form action="<?= site_url('komentar/tambah') ?>" method="POST">
     <div class="form-group">
-      <label for="">Nama : </label>
-      <input type="text" name="" id="" class="form-control" placeholder="masukkan nama di sini" aria-describedby="helpId" required="required">
+      <label for="judulblog">Judul Blog : </label>
+      <input type="text" class="form-control" name="txtjudulblog" id="judulblog" placeholder="masukkan judul blog di sini" aria-describedby="helpId" required="required">
     </div>
 
     <div class="form-group">
-      <label for="">Email</label>
-      <input type="email" name="" id="" class="form-control" placeholder="masukkan email di sini" aria-describedby="helpId" required="required">
+      <label for="nama">Nama</label>
+      <input type="text" class="form-control" name="txtnama" id="nama" placeholder="masukkan nama di sini" aria-describedby="helpId" required="required">
+    </div>
+	
+	<div class="form-group">
+      <label for="email">email</label>
+      <input type="email" class="form-control" name="txtemail" id="email" placeholder="masukkan email di sini" aria-describedby="helpId" required="required">
     </div>
 
     <div class="form-group">
-      <label for="">Isi Komentar</label>
-      <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId" required="required">
+      <label for="komentar">Isi Komentar</label>
+      <input type="text" class="form-control" name="txtisi" id="komentar" placeholder="masukkan komentar di sini" aria-describedby="helpId" required="required">
+    </div>
+	
+	<div class="form-group">
+      <label for="tglkomentar">Tanggal Isi</label>
+      <input type="date" class="form-control" name="txttglkomentar" id="tglkomentar" placeholder="masukkan tanggal komentar di sini" aria-describedby="helpId" required="required">
     </div>
 
     <div class="form-group">
-      <button class="btn btn-secondary" name="btnback" href="<?php echo base_url('main/tampil_admin_komentar')?>">BACK</button>
-      <input class="btn btn-success" type="submit" name="btnsimpan">SIMPAN</button>
-      <input class="btn btn-danger" type="reset" name="btnreset">RESET</button>
+      <a class="btn btn-secondary" name="btnback" href="<?php echo site_url('main/tampil_admin_komentar'); ?>" name="btnback">BACK</a>
+      <button class="btn btn-danger" type="reset" name="btnreset">RESET</button>
+	  <button class="btn btn-success" type="submit" name="btnsimpan">SIMPAN</button>
+      
     </div>
 </form>
