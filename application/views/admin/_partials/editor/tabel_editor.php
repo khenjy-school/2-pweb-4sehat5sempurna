@@ -1,4 +1,4 @@
-<table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
+<table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
     <thead>
         <tr>
             <th>Id Editor</th>
