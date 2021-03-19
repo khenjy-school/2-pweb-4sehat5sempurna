@@ -2,12 +2,11 @@
 <html lang="en">
   <head>
     <?php $this->load->view('admin/_partials/head.html') ?>
-
     <title>Admin - Blog</title>
   </head>
   <body>
+  
       <?php $this->load->view('admin/_partials/navbar.php') ?>
-
       <div class="container-fluid">
         <div class="row">
           <?php $this->load->view('admin/_partials/sidebar.php') ?>

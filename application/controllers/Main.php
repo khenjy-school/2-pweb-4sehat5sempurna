@@ -19,12 +19,9 @@ class Main extends CI_Controller
 	public function login()
     {
         if(isset($_POST['btnlogin'])) {
-			$email = $this->input->post('txtemail');
-            $password = $this->input->post('txtpassword');
-			
 			$kondisi = array(
-				'email' => $email,
-				'password' => $password
+				'email' => $this->input->post('txtemail'),
+				'password' => $this->input->post('txtpassword')
 			);
             $cek_user = $this->Admin_mdl->cek_data('admin', $kondisi);
 
@@ -40,7 +37,7 @@ class Main extends CI_Controller
 				redirect('main/tampil_admin');
             }
             else{
-                echo "email tidak ditemukan";
+                echo "<scipt>alert('email tidak ditemukan')</script>";
                 $this->load->view('admin/login.php');
             }
 		}
@@ -53,6 +50,11 @@ class Main extends CI_Controller
 	public function tampil_admin()
 	{
 		$this->load->view('admin/admin.php');
+	}
+
+	public function tampil_admin_settings()
+	{
+		$this->load->view('admin/admin_settings.php');
 	}
 
 	//Berfungsi untuk menampilkan halaman admin bagian blog (sementara sebelum dipindahkan ke controller masing-masing)

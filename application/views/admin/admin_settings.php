@@ -20,7 +20,7 @@
             </div>
             <div class="row">
               <div class="col-md-5">
-                <?php $this->load->view('admin/_partials/blog/form_addblog.php') ?>
+                <?php $this->load->view('admin/_partials/admin/form_editadmin.php') ?>
               </div>
             </div>
             <div class="row">

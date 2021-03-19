@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <?php $this->load->view('admin/_partials/head.html') ?>
+    <?php $this->load->view('admin/_partials/head.php') ?>
 
 
     <title>Login</title>
@@ -11,22 +11,20 @@
 
       <div class="container-fluid">
         <div class="row">
-          <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-            <div class ="row">
-              <div class="col pt-md-2 pt-md-3 mb-3 border-bottom">
-                <h1>Login</h1>
+          <main role="main" class="col-md-5 mx-md-auto px-md-4">
+            <div class="card m-md-3">
+              <div class ="card-header pt-md-5 border-bottom">
+                  <h1 class="text-center">Login</h1>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-md-5">
+              <div class="card-body">
                 <?php $this->load->view('admin/_partials/admin/form_login.php') ?>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-md">
-                <?php $this->load->view('admin/_partials/footer.php') ?>
               </div>
-            </div>
+              <div class="row">
+                <div class="col-md">
+                  <?php $this->load->view('admin/_partials/footer.php') ?>
+                </div>
+              </div>
           </main>
         </div>
       </div>

@@ -14,6 +14,7 @@
 
     <div class="form-group">
       <a class="btn btn-secondary" href="<?php echo site_url('main/tampil_admin'); ?>" name="btnback">BACK</a>
-      <button class="btn btn-success" type="submit" name="btnlogin">LOGIN</button>
+      <button class="btn btn-primary" type="submit" name="btnlogin">LOGIN</button>
+      <button class="btn btn-success" type="submit" name="btnlogin">SIGN UP</button>
     </div>
 </form>
