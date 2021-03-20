@@ -3,6 +3,10 @@
   <head>
     <?php $this->load->view('admin/_partials/head') ?>
     <title>Admin</title>
+  <style type="text/css">
+  .row {
+}
+  </style>
   </head>
   <body>
   
@@ -12,7 +16,7 @@
         <?php $this->load->view('admin/_partials/sidebar.php') ?>
         <div id="content-wrapper">
           <div class="container-fluid">
-              <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+              <main role="main" class="col-md-9 col-lg-10 px-md-4">
                 <div class ="row">
                   <div class="col-md pt-md-5 mb-md-3 border-bottom">
                     <div class="row">

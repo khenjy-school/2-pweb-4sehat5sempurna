@@ -2,14 +2,12 @@
 <ul class="sidebar navbar-nav">
     <li class="nav-item border-bottom <?php echo $this->uri->segment(2) == '' ? 'active': '' ?>">
         <a class="nav-link" href="<?php echo site_url('main/tampil_admin') ?>">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
             <span class="h3">Dashboard</span>
         </a>
     </li>
     <li class="nav-item dropdown <?php echo $this->uri->segment(2) == 'products' ? 'active': '' ?>">
         <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
-            <i class="fas fa-fw fa-boxes"></i>
             <span class="h5">Blog</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
@@ -18,9 +16,8 @@
         </div>
     </li>
     <li class="nav-item dropdown <?php echo $this->uri->segment(2) == 'editor' ? 'active': '' ?>">
-        <a class="nav-link dropdown-toggle" href="#" id="pagesD     ropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
-            <i class="fas fa-fw fa-boxes"></i>
             <span class="h5">Editor</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
@@ -28,10 +25,9 @@
             <a class="dropdown-item" href="<?php echo site_url('main/tampil_admin_editor') ?>">List Editor</a>
         </div>
     </li>
-    <li class="nav-item dropdown <?php echo $this->uri->segment(2) == 'editor' ? 'active': '' ?>">
+    <li class="nav-item dropdown <?php echo $this->uri->segment(2) == 'komentar' ? 'active': '' ?>">
         <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
-            <i class="fas fa-fw fa-boxes"></i>
             <span class="h5">Komentar</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
