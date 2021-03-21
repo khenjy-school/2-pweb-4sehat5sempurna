@@ -7,4 +7,6 @@
 <!--Bootstrap CSS Offline-->
 <link href="<?php echo base_url('assets/css/bootstrap.css')?>" rel="stylesheet">
 <!-- Custom styles for this template-->
-<link href="<?php echo base_url('css/sb-admin.css') ?>" rel="stylesheet">
+<link href="<?php echo base_url('assets/css/4s5s.css') ?>" rel="stylesheet">
+<!-- Custom styles for this template minimal version-->
+<!--<link href="<?php echo base_url('assets/css/4s5s.css') ?>" rel="stylesheet">-->
