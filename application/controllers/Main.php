@@ -39,22 +39,32 @@ class Main extends CI_Controller
             else{
                 echo "<scipt>alert('email tidak ditemukan')</script>";
                 $this->load->view('admin/login.php');
+				$this->load->view('admin/_partials/footer.php');
             }
 		}
 		else{
 			$this->load->view('admin/login.php');
+			$this->load->view('admin/_partials/footer.php');
 		}
     }
 
 	//Berfungsi untuk menampilkan halaman utama admin (dashboard)
 	public function tampil_admin()
 	{
-		$this->load->view('admin/admin.php');
+		$data['title'] = 'Admin';
+		$data['header1'] = 'Dashboard';
+		$this->load->view('admin/_partials/head.php', $data);
+		$this->load->view('admin/_partials/navbar.php', $data);
+		$this->load->view('admin/index.php');
 	}
 
 	public function tampil_admin_settings()
 	{
-		$this->load->view('admin/admin_settings.php');
+		$data['title'] = "Admin";
+		$data['header1'] = 'Settings';
+		$this->load->view('admin/_partials/head.php', $data);
+		$this->load->view('admin/_partials/navbar.php', $data);
+		$this->load->view('admin/admin_settings.php', $data);
 	}
 
 	//Berfungsi untuk menampilkan halaman admin bagian blog (sementara sebelum dipindahkan ke controller masing-masing)
@@ -63,6 +73,10 @@ class Main extends CI_Controller
 		$data = array(
 			'blog' => $this->Blog_mdl->getAll('blog')->result()
 		);
+		$data['title'] = "Admin - Blog";
+		$data['header1'] = 'List Blog';
+		$this->load->view('admin/_partials/head.php', $data);
+		$this->load->view('admin/_partials/navbar.php', $data);
 		$this->load->view('admin/admin_blog.php', $data);
 	}
 
@@ -72,6 +86,10 @@ class Main extends CI_Controller
 		$data = array(
 			'editor' => $this->Editor_mdl->getAll('editor')->result()
 		);
+		$data['title'] = "Admin - Editor";
+		$data['header1'] = 'List Editor';
+		$this->load->view('admin/_partials/head.php', $data);
+		$this->load->view('admin/_partials/navbar.php', $data);
 		$this->load->view('admin/admin_editor.php', $data);
 	}
 
@@ -81,96 +99,160 @@ class Main extends CI_Controller
 		$data = array(
 			'komentar' => $this->Komentar_mdl->getAll('komentar')->result()
 		);
+		$data['title'] = "Admin - Komentar";
+		$data['header1'] = 'List Komentar';
+		$this->load->view('admin/_partials/head.php', $data);
+		$this->load->view('admin/_partials/navbar.php', $data);
 		$this->load->view('admin/admin_komentar.php', $data);
 	}
 
 	//Berfungsi untuk menampilkan halaman index
 	public function tampil_home()
 	{
-		$this->load->view('public/home.php');
+		$data['title'] = "Selamat Datang di 4s5s";
+		$data['header1'] = 'Selamat Datang di 4 Sehat 5 Sempurna';
+		$this->load->view('admin/_partials/head.php', $data);
+		$this->load->view('admin/_partials/navbar.php', $data);
+		$this->load->view('public/home.php', $data);
 	}
 
 	//Berfungsi untuk menampilkan halaman about
 	public function tampil_about()
 	{
-		$this->load->view('public/about.php');
+		$data['title'] = "About Us";
+		$data['header1'] = 'About Us';
+		$this->load->view('admin/_partials/head.php', $data);
+		$this->load->view('admin/_partials/navbar.php', $data);
+		$this->load->view('public/about.php', $data);
 	}
 
 	//Berfungsi untuk menampilkan halaman error
 	public function tampil_error()
 	{
-		$this->load->view('public/error.php');
+		$data['title'] = "Error 404";
+		$data['header1'] = 'Error 404';
+		$this->load->view('admin/_partials/head.php', $data);
+		$this->load->view('admin/_partials/navbar.php', $data);
+		$this->load->view('public/error.php', $data);
 	}
 
 	//Berfungsi untuk menampilkan halaman kontak
 	public function tampil_kontak()
 	{
-		$this->load->view('public/kontak.php');
+		$data['title'] = "Kontak Kami";
+		$data['header1'] = 'Kontak';
+		$this->load->view('admin/_partials/head.php', $data);
+		$this->load->view('admin/_partials/navbar.php', $data);
+		$this->load->view('public/kontak.php', $data);
 	}
 
 	//Berfungsi untuk menampilkan halaman signup
 	public function tampil_signup()
 	{
-		$this->load->view('public/signup.php');
+		$data['title'] = "Sign Up";
+		$data['header1'] = 'Sign Up';
+		$this->load->view('admin/_partials/head.php', $data);
+		$this->load->view('admin/_partials/navbar.php', $data);
+		$this->load->view('public/signup.php', $data);
 	}
 
 	//Berfungsi untuk menampilkan halaman login
 	public function tampil_login()
 	{
-		$this->load->view('public/login.php');
+		$data['title'] = "Login";
+		$data['header1'] = 'Login';
+		$this->load->view('admin/_partials/head.php', $data);
+		$this->load->view('admin/_partials/navbar.php', $data);
+		$this->load->view('public/login.php', $data);
 	}
 
 	//Berfungsi untuk menampilkan halaman penghung
 	public function tampil_penghubung()
 	{
-		$this->load->view('public/penghubung.php');
+		$data['title'] = "Penghung";
+		$data['header1'] = 'Penghubung';
+		$this->load->view('admin/_partials/head.php', $data);
+		$this->load->view('admin/_partials/navbar.php', $data);
+		$this->load->view('public/penghubung.php', $data);
 	}
 
 	//Berfungsi untuk menampilkan halaman utama editor
 	public function tampil_editor()
 	{
-		$this->load->view('editor/editor.php');
+		$data['title'] = "Editor";
+		$data['header1'] = 'Editor';
+		$this->load->view('editor/_partials/head.php', $data);
+		$this->load->view('editor/_partials/navbar.php', $data);
+		$this->load->view('editor/editor.php', $data);
 	}
 
 	//Berfungsi untuk menampilkan halaman buat blog
 	public function tampil_buatblog()
 	{
-		$this->load->view('editor/buatblog.php');
+		$data['title'] = "Buat Blog";
+		$data['header1'] = 'Buat Blog';
+		$this->load->view('editor/_partials/head.php', $data);
+		$this->load->view('editor/_partials/navbar.php', $data);
+		$this->load->view('editor/buatblog.php', $data);
 	}
 
 	//Berfungsi untuk menampilkan halaman utama makanan pokok
 	public function tampil_makananpokok()
 	{
-		$this->load->view('public/makananpokok.php');
+		$data['title'] = "Makanan Pokok";
+		$data['header1'] = 'Makanan Pokok';
+		$this->load->view('public/_partials/head.php', $data);
+		$this->load->view('public/_partials/navbar.php', $data);
+		$this->load->view('public/makananpokok.php', $data);
 	}
 
 	//Berfungsi untuk menampilkan halaman utama lauk pauk
 	public function tampil_laukpauk()
 	{
-		$this->load->view('public/laukpauk.php');
+		$data['title'] = "Lauk Pauk";
+		$data['header1'] = 'Lauk Pauk';
+		$this->load->view('public/_partials/head.php', $data);
+		$this->load->view('public/_partials/navbar.php', $data);
+		$this->load->view('public/laukpauk.php', $data);
 	}
 
 	//Berfungsi untuk menampilkan halaman utama sayur
 	public function tampil_sayur()
 	{
-		$this->load->view('public/sayur.php');
+		$data['title'] = "Sayur";
+		$data['header1'] = 'Sayur';
+		$this->load->view('public/_partials/head.php', $data);
+		$this->load->view('public/_partials/navbar.php', $data);
+		$this->load->view('public/sayur.php', $data);
 	}
 
 	//Berfungsi untuk menampilkan halaman utama buah
 	public function tampil_buah()
 	{
-		$this->load->view('public/buah.php');
+		$data['title'] = "Buah";
+		$data['header1'] = 'Buah';
+		$this->load->view('public/_partials/head.php', $data);
+		$this->load->view('public/_partials/navbar.php', $data);
+		$this->load->view('public/buah.php', $data);
 	}
 
 	//Berfungsi untuk menampilkan halaman utama susu
 	public function tampil_susu()
 	{
-		$this->load->view('public/susu.php');
+		$data['title'] = "Susu";
+		$data['header1'] = 'Susu';
+		$this->load->view('public/_partials/head.php', $data);
+		$this->load->view('public/_partials/navbar.php', $data);
+		$this->load->view('public/susu.php', $data);
 	}
 
 	//Berfungsi sebagai contoh
 	public function tampil_namahalaman()
 	{
-		$this->load->view('namahalaman.php');
+		$data['title'] = "Halaman";
+		$data['header1'] = 'Ini adalah Header';
+		$this->load->view('public/_partials/head.php', $data);
+		$this->load->view('public/_partials/navbar.php', $data);
+		$this->load->view('namahalaman.php', $data);
 	}
 }

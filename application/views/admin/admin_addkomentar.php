@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <?php $this->load->view('admin/_partials/head.html') ?>
+    <?php $this->load->view('admin/_partials/head') ?>
 
 
     <title>Tambah Komentar</title>

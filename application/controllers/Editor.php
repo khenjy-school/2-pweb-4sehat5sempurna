@@ -43,7 +43,11 @@ class editor extends CI_Controller
 			$this->Editor_mdl->save('editor', $data);
 		}
 		else{
-			$this->load->view('admin/admin_addeditor');
+			$data['title'] = "Tambah Editor";
+			$data['header1'] = 'Tambah Editor';
+			$this->load->view('admin/_partials/head.php', $data);
+			$this->load->view('admin/_partials/navbar.php', $data);
+			$this->load->view('admin/admin_addeditor', $data);
 		}
 	}
 
@@ -98,6 +102,10 @@ class editor extends CI_Controller
 		}
 		else{
 			$data['editor'] = $this->Editor_mdl->getById($id_editor);
+			$data['title'] = "Edit Editor";
+			$data['header1'] = 'Edit Editor';
+			$this->load->view('admin/_partials/head.php', $data);
+			$this->load->view('admin/_partials/navbar.php', $data);
 			$this->load->view('admin/admin_editeditor.php', $data);
 		}
 	}

@@ -7,6 +7,7 @@
             <th>Password</th>
             <th>Telp</th>
             <th>Tgl Gabung</th>
+            <th>Fungsi</th>
         </tr>
     </thead>
     <tbody>

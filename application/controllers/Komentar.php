@@ -27,7 +27,11 @@ class Komentar extends CI_Controller
 			$this->Komentar_mdl->save('komentar', $data);
 		}
 		else{
-			$this->load->view('admin/admin_addkomentar.php');
+			$data['title'] = "Tambah Komentar";
+			$data['header1'] = 'Tambah Komentar';
+			$this->load->view('admin/_partials/head.php', $data);
+			$this->load->view('admin/_partials/navbar.php', $data);
+			$this->load->view('admin/admin_addkomentar.php', $data);
 		}
 	}
 
@@ -49,7 +53,11 @@ class Komentar extends CI_Controller
 			// Executes: REPLACE INTO komentar (judul_blog, nama, email, isi, tglkomen) VALUES ('txtjudulblog', 'txtnama', 'txtemail', 'txtisi', 'txttglkomentar')
 		}
 		else {
-			$data['blog'] = $this->Blog_mdl->getById($id_blog);
+			$data['komentar'] = $this->Komentar_mdl->getById($id_komentar);
+			$data['title'] = "Edit Komentar";
+			$data['header1'] = 'Edit Komentar';
+			$this->load->view('admin/_partials/head.php', $data);
+			$this->load->view('admin/_partials/navbar.php', $data);
 			$this->load->view('admin/admin_editkomentar.php', $data);
 		}
 	}

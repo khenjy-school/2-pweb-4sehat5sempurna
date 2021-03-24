@@ -25,7 +25,11 @@ class Blog extends CI_Controller
 			$this->Blog_mdl->save('blog', $data);
 		}
 		else{
-			$this->load->view('admin/admin_addblog');
+			$data['title'] = "Tambah Blog";
+			$data['header1'] = 'Tambah Blog';
+			$this->load->view('admin/_partials/head.php', $data);
+			$this->load->view('admin/_partials/navbar.php', $data);
+			$this->load->view('admin/admin_addblog', $data);
 		}
 
 	}
@@ -46,6 +50,10 @@ class Blog extends CI_Controller
 		}
 		else {
 			$data['blog'] = $this->Blog_mdl->getById($id_blog);
+			$data['title'] = "Edit Blog";
+			$data['header1'] = 'Edit Blog';
+			$this->load->view('admin/_partials/head.php', $data);
+			$this->load->view('admin/_partials/navbar.php', $data);
 			$this->load->view('admin/admin_editblog', $data);
 		}
 	}

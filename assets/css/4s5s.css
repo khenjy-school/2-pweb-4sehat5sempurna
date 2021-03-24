@@ -1,2 +1,11 @@
 /* Ini adalah halaman yang mengatur custom style css */
-/* Dikerjakan oleh Efrend */
+.sidebar {
+	width: 10%;
+	float: left;
+}
+
+.sidebar {
+	background-color: black;
+	height: 150%;
+	overflow: auto;
+}
