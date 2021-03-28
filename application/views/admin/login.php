@@ -1,29 +1,16 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <?php $this->load->view('admin/_partials/head.php') ?>
-
-
-    <title>Login</title>
-  </head>
   <body>
-      <?php $this->load->view('admin/_partials/navbar.php') ?>
-
       <div class="container-fluid">
         <div class="row">
           <main role="main" class="col-md-5 mx-md-auto px-md-4">
             <div class="card m-md-3">
               <div class ="card-header pt-md-5 border-bottom">
-                  <h1 class="text-center">Login</h1>
+                  <h1 class="text-center"><?php echo $header1; ?></h1>
               </div>
               <div class="card-body">
                 <?php $this->load->view('admin/_partials/admin/form_login.php') ?>
               </div>
-              </div>
-              <div class="row">
-                <div class="col-md">
-                  <?php $this->load->view('admin/_partials/footer.php') ?>
-                </div>
               </div>
           </main>
         </div>

@@ -11,6 +11,7 @@ class Blog_mdl extends CI_Model
     public $judul_blog;
     public $nama_editor;
     public $isi_blog;
+	public $image = "default.png";
 
 	//Berfungsi untuk mengambil data hasil query
 	public function getAll($_table)
@@ -27,6 +28,7 @@ class Blog_mdl extends CI_Model
 	//Berfungsi untuk menyimpan data pada tabel blog
 	public function save($_table, $data)
 	{
+		$this->gambar = $this->_uploadImage();
 		$this->db->insert($_table, $data);
 		redirect('main/tampil_admin_blog', 'refresh');
 	}
@@ -37,6 +39,23 @@ class Blog_mdl extends CI_Model
 		$this->db->where('id_blog', $id_blog);
 		$this->db->update('blog', $data);
 		redirect('main/tampil_admin_blog', 'refresh');
+	}
+
+	private function _uploadImage()
+	{
+		$config['upload_path'] = './upload/blog';
+		$config['allowed_types'] = 'gif|jpg|png';
+		$config['file_name'] = $this->blog_id;
+		$config['overwrite'] = true;
+		$config['max_size'] = 1024;
+		// $config['max_width']            = 1024;
+		// $config['max_height']           = 768;
+
+		$this->load->library('upload', $config);
+
+		if ($this->upload->do_upload('gambar')) {
+			return $this->upload->data("file_name");
+		}
 	}
 
 	//Berfungsi untuk menghapus data pada tabel blog

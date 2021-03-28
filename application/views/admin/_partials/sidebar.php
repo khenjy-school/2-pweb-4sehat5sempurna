@@ -37,6 +37,12 @@
     </div>
 
     <div class="nav-item dropdown">
+        <a class="nav-link" href="<?php echo site_url('main/tampil_admin_data') ?>">
+            <span class="h3">admin</span>
+        </a>
+    </div>
+
+    <div class="nav-item dropdown">
         <a class="nav-link" href="<?php echo site_url('main/tampil_admin_settings') ?>">
             <span class="h3">Settings</span>
         </a>

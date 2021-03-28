@@ -42,6 +42,13 @@
       $editor->tglgabung ?>" required="required">
   </div>
 
+  <div class="col-md-4 form-group">
+      <label for="image">Gambar Akun</label>
+      <input type="file" 
+      class="form-control" name="txtimage" id="image" placeholder="masukkan gambar di sini" value="<?php echo $editor->image ?>"  
+      aria-describedby="helpId" required="required">
+  </div>
+
   <div class="col-md-3 form-group">
       <a class="btn btn-secondary" href="<?php echo site_url('main/tampil_admin_editor'); ?>" name="btnback">BACK</a>
       <button class="btn btn-danger" type="reset" name="btnreset">RESET</button>

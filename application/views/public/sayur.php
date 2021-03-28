@@ -1,13 +1,7 @@
-  <!doctype html>
+<!doctype html>
 <html lang="en">
-  <head>
-  <?php $this->load->view('public/_partials/head.php') ?>
-
-    <title>Welcome To 4 Sehat 5 Sempurna</title>
-  </head>
+<head>
   <body>
-
-    <?php $this->load->view('public/_partials/header.php') ?>
 
       <!-- Isi -->
       <?php $this->load->view('public/_partials/navigation_article.php') ?>
@@ -37,46 +31,22 @@
             <p>Sayuran yang mempunyai nama latin Daucus carota ini terkenal sebagai sumber Vitamin A karena mengandung Provitamin A
             Vitamin A sangat baik untuk menjaga kesehatan mata dan meningkatkan ketahanan tubuh terhadap penyakit. Beta-karoten yang merupakan senyawa Provitamin A mampu mencegah reaktivitas bensopiren penyebab kanker paru-paru.</p>
 
-          </div>
-          <div class="col-md-3 offset-md-1">
-            <div class="container">
-              <div class="row">
-            <div class="col-md">
-              <span class="text-left" style="font-style: bold; font-size: 28px;">Blog Terbaru</span>
-            </div>
-             <div class="card my-1" style="width: 241px; height: 134px; float: right;">
-                <img src="img/susu.jpg" class="card-img-top">
-              </div>
-              <div class="card my-1" style="width: 241px; height: 134px; float: right;">
-                <img src="img/singkong.jpg" class="card-img-top">
-                
-              </div>
-              <div class="card my-1" style="width: 241px; height: 134px; float: right;">
-                <img src="img/sayur-sayuran.jpg" class="card-img-top">
-                
-              </div>
-              </div>
-              </div>
-          </div>
         </div>
-        
-      </div>
+        <div class="col-md-3 offset-md-1">
+            <?php $this->load->view('public/_partials/new_article') ?>
+        </div>
+    </div>
 
-      <?php $this->load->view('public/_partials/footer.php') ?>   
+</div>
+
+<?php $this->load->view('public/_partials/footer.php') ?>   
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
 
-
-
-
-
-
- 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-  
-
-  </body>
+</body>
 </html>

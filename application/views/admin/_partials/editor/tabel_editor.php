@@ -13,25 +13,25 @@
     <tbody>
         <?php foreach ($editor as $s) { ?>
         <tr>
-            <td width="10%">
+            <td class="text-break" width="10%">
                 <?php echo $s->id_editor ?>
             </td>
-            <td width="15%">
+            <td class="text-break" width="15%">
                 <?php echo $s->nama ?>
             </td>
-            <td width="15%">
+            <td class="text-break" width="20%">
                 <?php echo $s->email ?>
             </td>
-            <td width="15%">
-                <?php echo $s->password ?>
+            <td class="text-break" width="15%">
+                <input class="form-control" type="password" value="<?php echo $s->password ?>" disabled="disabled">
             </td>
-            <td width="10%">
+            <td class="text-break" width="15%">
                 <?php echo $s->telp ?>
             </td>
-            <td width="15%">
+            <td class="text-break" width="10%">
                 <?php echo $s->tglgabung ?>
             </td>
-            <td width="20%">
+            <td class="text-break" width="15%">
                 <a class="btn btn-warning text-white" href="<?php echo site_url('editor/edit/'.$s->id_editor) ?>">Edit</a>
                 
                 <a class="btn btn-danger text-white" href="<?php echo site_url('editor/delete/'.$s->id_editor) ?>">Hapus</a>

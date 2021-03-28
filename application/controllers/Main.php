@@ -10,11 +10,33 @@ class Main extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('Admin_mdl');
+		$this->load->model('Main_mdl');
 		$this->load->model('Blog_mdl');
 		$this->load->model('Editor_mdl');
 		$this->load->model('Komentar_mdl');
 		$this->load->helper('url');
 	}
+
+	public function signup()
+    {
+        if(isset($_POST['btntambah'])) {
+			$kondisi = array(
+				'nama' => $this->input->post('txtnama'),
+				'email' => $this->input->post('txtemail'),
+				'password' => $this->input->post('txtpassword'),
+				'telp' => $this->input->post('txttelp')
+			);
+            $this->Admin_mdl->save('admin', $kondisi);
+		}
+		else{
+			$data['title'] = 'Sign Up';
+			$data['header1'] = 'Sign Up';
+			$this->load->view('admin/_partials/head.php', $data);
+			$this->load->view('admin/_partials/navbar.php', $data);
+			$this->load->view('admin/signup.php', $data);
+			$this->load->view('admin/_partials/footer.php');
+		}
+    }
 
 	public function login()
     {
@@ -38,12 +60,20 @@ class Main extends CI_Controller
             }
             else{
                 echo "<scipt>alert('email tidak ditemukan')</script>";
-                $this->load->view('admin/login.php');
+				$data['title'] = 'Login';
+				$data['header1'] = 'Login';
+				$this->load->view('admin/_partials/head.php', $data);
+				$this->load->view('admin/_partials/navbar.php', $data);
+				$this->load->view('admin/login.php', $data);
 				$this->load->view('admin/_partials/footer.php');
             }
 		}
 		else{
-			$this->load->view('admin/login.php');
+			$data['title'] = 'Login';
+			$data['header1'] = 'Login';
+			$this->load->view('admin/_partials/head.php', $data);
+			$this->load->view('admin/_partials/navbar.php', $data);
+			$this->load->view('admin/login.php', $data);
 			$this->load->view('admin/_partials/footer.php');
 		}
     }
@@ -106,14 +136,27 @@ class Main extends CI_Controller
 		$this->load->view('admin/admin_komentar.php', $data);
 	}
 
+	//Berfungsi untuk menampilkan halaman admin bagian komentar (sementara sebelum dipindahkan ke controller masing-masing)
+	public function tampil_admin_data()
+	{
+		$data = array(
+			'admin' => $this->Admin_mdl->getAll('komentar')->result()
+		);
+		$data['title'] = "Admin - Data";
+		$data['header1'] = 'List admin';
+		$this->load->view('admin/_partials/head.php', $data);
+		$this->load->view('admin/_partials/navbar.php', $data);
+		$this->load->view('admin/admin_komentar.php', $data);
+	}
+
 	//Berfungsi untuk menampilkan halaman index
 	public function tampil_home()
 	{
 		$data['title'] = "Selamat Datang di 4s5s";
 		$data['header1'] = 'Selamat Datang di 4 Sehat 5 Sempurna';
-		$this->load->view('admin/_partials/head.php', $data);
-		$this->load->view('admin/_partials/navbar.php', $data);
-		$this->load->view('public/home.php', $data);
+		$this->load->view('public/_partials/head.php', $data);
+		$this->load->view('public/_partials/navbar.php', $data);
+		$this->load->view('public/index.php', $data);
 	}
 
 	//Berfungsi untuk menampilkan halaman about
@@ -121,8 +164,8 @@ class Main extends CI_Controller
 	{
 		$data['title'] = "About Us";
 		$data['header1'] = 'About Us';
-		$this->load->view('admin/_partials/head.php', $data);
-		$this->load->view('admin/_partials/navbar.php', $data);
+		$this->load->view('public/_partials/head.php', $data);
+		$this->load->view('public/_partials/navbar.php', $data);
 		$this->load->view('public/about.php', $data);
 	}
 
@@ -131,8 +174,8 @@ class Main extends CI_Controller
 	{
 		$data['title'] = "Error 404";
 		$data['header1'] = 'Error 404';
-		$this->load->view('admin/_partials/head.php', $data);
-		$this->load->view('admin/_partials/navbar.php', $data);
+		$this->load->view('public/_partials/head.php', $data);
+		$this->load->view('public/_partials/navbar.php', $data);
 		$this->load->view('public/error.php', $data);
 	}
 
@@ -141,8 +184,8 @@ class Main extends CI_Controller
 	{
 		$data['title'] = "Kontak Kami";
 		$data['header1'] = 'Kontak';
-		$this->load->view('admin/_partials/head.php', $data);
-		$this->load->view('admin/_partials/navbar.php', $data);
+		$this->load->view('public/_partials/head.php', $data);
+		$this->load->view('public/_partials/navbar.php', $data);
 		$this->load->view('public/kontak.php', $data);
 	}
 
@@ -151,8 +194,8 @@ class Main extends CI_Controller
 	{
 		$data['title'] = "Sign Up";
 		$data['header1'] = 'Sign Up';
-		$this->load->view('admin/_partials/head.php', $data);
-		$this->load->view('admin/_partials/navbar.php', $data);
+		$this->load->view('public/_partials/head.php', $data);
+		$this->load->view('public/_partials/navbar.php', $data);
 		$this->load->view('public/signup.php', $data);
 	}
 
@@ -161,8 +204,8 @@ class Main extends CI_Controller
 	{
 		$data['title'] = "Login";
 		$data['header1'] = 'Login';
-		$this->load->view('admin/_partials/head.php', $data);
-		$this->load->view('admin/_partials/navbar.php', $data);
+		$this->load->view('public/_partials/head.php', $data);
+		$this->load->view('public/_partials/navbar.php', $data);
 		$this->load->view('public/login.php', $data);
 	}
 
@@ -171,8 +214,8 @@ class Main extends CI_Controller
 	{
 		$data['title'] = "Penghung";
 		$data['header1'] = 'Penghubung';
-		$this->load->view('admin/_partials/head.php', $data);
-		$this->load->view('admin/_partials/navbar.php', $data);
+		$this->load->view('public/_partials/head.php', $data);
+		$this->load->view('public/_partials/navbar.php', $data);
 		$this->load->view('public/penghubung.php', $data);
 	}
 
@@ -233,7 +276,7 @@ class Main extends CI_Controller
 		$data['header1'] = 'Buah';
 		$this->load->view('public/_partials/head.php', $data);
 		$this->load->view('public/_partials/navbar.php', $data);
-		$this->load->view('public/buah.php', $data);
+		$this->load->view('public/buahbuahan.php', $data);
 	}
 
 	//Berfungsi untuk menampilkan halaman utama susu

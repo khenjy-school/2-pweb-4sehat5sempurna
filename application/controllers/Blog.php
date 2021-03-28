@@ -20,7 +20,7 @@ class Blog extends CI_Controller
 				'id_blog' => '',
 				'judul_blog' => $this->input->post('txtjudul'),
 				'nama_editor' => $this->input->post('txteditor'),
-				'isi_blog' => $this->input->post('txtisi')
+				'isi_blog' => $this->input->post('txtisi'),
 			);
 			$this->Blog_mdl->save('blog', $data);
 		}

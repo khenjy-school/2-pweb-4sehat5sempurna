@@ -25,6 +25,13 @@
         class="form-control" name="txtisi" id="isi" aria-describedby="helpId" placeholder="masukkan isi di sini" value="<?php echo $blog->isi_blog ?>">
     </div>
 
+    <div class="col-md-4 form-group">
+      <label for="gambar">Gambar Akun</label>
+      <input type="file" 
+      class="form-control" name="txtgambar" id="gambar" placeholder="masukkan gambar di sini" value="<?php echo $blog->gambar ?>"  
+      aria-describedby="helpId" required="required">
+    </div>
+
     <div class="col-md-3 form-group">
       <a class="btn btn-secondary" href="<?php echo site_url('main/tampil_admin_blog'); ?>" name="btnback">BACK</a>
       <button class="btn btn-success" type="submit" name="btnsimpan">SUBMIT</button>
