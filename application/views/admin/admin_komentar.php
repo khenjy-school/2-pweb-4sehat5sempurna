@@ -18,6 +18,7 @@
                     </div>
                 </div>
             </div>
+                <?php $this->load->view('admin/_partials/komentar/data_komentar')?>
             <div class="row">
                 <div class="col border-bottom">
                     <?php $this->load->view('admin/_partials/komentar/tabel_komentar') ?>

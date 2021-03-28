@@ -27,6 +27,11 @@ class Editor_mdl extends CI_Model
 		redirect('editor/edit', 'refresh');
 	}
 
+	public function countAll($_table)
+	{
+		return $this->db->count_all_results($_table);
+	}
+
 	//Berfungsi untuk
 	public function save($_table, $data)
 	{

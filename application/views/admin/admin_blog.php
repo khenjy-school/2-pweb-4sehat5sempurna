@@ -18,6 +18,7 @@
                     </div>
                 </div>
             </div>
+                <?php $this->load->view('admin/_partials/blog/data_blog')?>
             <div class="row">
                 <div class="col border-bottom">
                     <?php $this->load->view('admin/_partials/blog/tabel_blog') ?>

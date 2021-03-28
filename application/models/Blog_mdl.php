@@ -25,6 +25,11 @@ class Blog_mdl extends CI_Model
 		return $this->db->get_where($this->_table, ["id_blog" => $id_blog])->row();
 	}
 
+	public function countAll($_table)
+	{
+		return $this->db->count_all_results($_table);
+	}
+
 	//Berfungsi untuk menyimpan data pada tabel blog
 	public function save($_table, $data)
 	{

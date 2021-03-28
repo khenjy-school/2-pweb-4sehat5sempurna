@@ -18,6 +18,7 @@
                     </div>
                 </div>
             </div>
+                <?php $this->load->view('admin/_partials/editor/data_editor')?>
             <div class="row">
                 <div class="col border-bottom">
                     <?php $this->load->view('admin/_partials/editor/tabel_editor') ?>

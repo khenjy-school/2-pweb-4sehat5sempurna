@@ -26,6 +26,11 @@ class Komentar_mdl extends CI_Model
 		return $this->db->get_where($this->_table, ["id_komentar" => $id_komentar])->row();
 		redirect('komentar/edit', 'refresh');
 	}
+	
+	public function countAll($_table)
+	{
+		return $this->db->count_all_results($_table);
+	}
 
 	//Berfungsi untuk menyimpan data pada tabel komentar
 	public function save($table, $data)
