@@ -1,3 +1,4 @@
+<base href="<?php echo base_url(); ?>">
 <!--  Footer 4 Sehat 5 Sempurna Dengan Grid -->
 <footer>
     <div class="container-fluid" style="background-color: #A8F584; height: 120px">
@@ -8,15 +9,15 @@
           </div>
           <div class="col-lg-7 offset-md-1" style="margin-top: 10px">
             <div style="text-align: right;">
-              <img src="img/fb.png" style="width: 30px; margin-left: 30px">
-              <img src="img/twitter.png" style="width: 30px; margin-left: 30px">
-              <img src="img/ig.png" style="width: 30px; margin-left: 30px">
-              <img src="img/line.png" style="width: 30px; margin-left: 30px">
+              <img src="assets/img/logo/fb.png" style="width: 30px; margin-left: 30px">
+              <img src="assets/img/logo/twitter.png" style="width: 30px; margin-left: 30px">
+              <img src="assets/img/logo/ig.png" style="width: 30px; margin-left: 30px">
+              <img src="assets/img/logo/line.png" style="width: 30px; margin-left: 30px">
             </div>
             <div class="text-right">
-              <a class="text-dark" href="about.html">About</a>
+              <a class="text-dark" href="<?php echo site_url('main/tampil_about')?>">About</a>
               <span>|</span>
-              <a class="text-dark" href="#Contact">Contact</a>
+              <a class="text-dark" href="<?php echo site_url('main/tampil_kontak')?>">Contact</a>
             </div>
             <div class="text-right">
               <span>Copyright @ 2020 4sehat5sempurna. All rights reserved.</span>

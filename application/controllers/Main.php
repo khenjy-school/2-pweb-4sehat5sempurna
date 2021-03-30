@@ -82,8 +82,8 @@ class Main extends CI_Controller
 	public function tampil_admin()
 	{
 		$data = array(
-			'title' =>  "Admin",
-			'header1' =>  "Dashboard",
+			'title' =>  'Admin',
+			'header1' =>  'Dashboard',
 			'jumlah_blog' => $this->Blog_mdl->countAll('blog'),
 			'jumlah_editor' => $this->Blog_mdl->countAll('editor'),
 			'jumlah_komentar' => $this->Blog_mdl->countAll('komentar')
@@ -96,8 +96,8 @@ class Main extends CI_Controller
 	public function tampil_admin_settings()
 	{
 		$data = array(
-			'title' =>  "Admin - Settings",
-			'header1' =>  "Settings",
+			'title' =>  'Admin - Settings',
+			'header1' =>  'Settings',
 		);
 		$this->load->view('admin/_partials/head.php', $data);
 		$this->load->view('admin/_partials/navbar.php', $data);
@@ -108,7 +108,7 @@ class Main extends CI_Controller
 	public function tampil_admin_blog()
 	{
 		$data = array(
-			'title' => "Admin - Blog",
+			'title' => 'Admin - Blog',
 			'header1' => 'List Blog',
 			'blog' => $this->Blog_mdl->getAll('blog')->result(),
 			'jumlah_blog' => $this->Blog_mdl->countAll('blog')
@@ -122,8 +122,8 @@ class Main extends CI_Controller
 	public function tampil_admin_editor()
 	{
 		$data = array(
-			'title' => "Admin - Editor",
-			'header1' => "List Editor",
+			'title' => 'Admin - Editor',
+			'header1' => 'List Editor',
 			'editor' => $this->Editor_mdl->getAll('editor')->result(),
 			'jumlah_editor' => $this->Editor_mdl->countAll('editor')
 		);
@@ -136,8 +136,8 @@ class Main extends CI_Controller
 	public function tampil_admin_komentar()
 	{
 		$data = array(
-			'title' => "Admin - Komentar",
-			'header1' => "List Komentar",
+			'title' => 'Admin - Komentar',
+			'header1' => 'List Komentar',
 			'komentar' => $this->Komentar_mdl->getAll('komentar')->result(),
 			'jumlah_komentar' => $this->Komentar_mdl->countAll('komentar')
 		);
@@ -150,8 +150,8 @@ class Main extends CI_Controller
 	public function tampil_admin_data()
 	{
 		$data = array(
-			'title' => "Admin - Data",
-			'header1' => "List Admin",
+			'title' => 'Admin - Data',
+			'header1' => 'List Admin',
 			'admin' => $this->Admin_mdl->getAll('komentar')->result()
 		);
 		$this->load->view('admin/_partials/head.php', $data);
@@ -164,7 +164,7 @@ class Main extends CI_Controller
 	{
 		$data = array(
 			'title' => "Selamat Datang di 4s5s",
-			'header1' => "Selamat Datang di 4 Sehat 5 Sempurna",
+			'header1' => "Selamat Datang di 4 Sehat 5 Sempurna"
 		);
 		$this->load->view('public/_partials/head.php', $data);
 		$this->load->view('public/_partials/navbar.php', $data);
@@ -175,8 +175,8 @@ class Main extends CI_Controller
 	public function tampil_about()
 	{
 		$data = array(
-			'title' => "About Us",
-			'header1' => "About Us",
+			'title' => 'About Us',
+			'header1' => 'About Us'
 		);
 		$this->load->view('public/_partials/head.php', $data);
 		$this->load->view('public/_partials/navbar.php', $data);
@@ -187,8 +187,8 @@ class Main extends CI_Controller
 	public function tampil_error()
 	{
 		$data = array(
-			'title' => "Error 404",
-			'header1' => "Error 404",
+			'title' => 'Error 404',
+			'header1' => 'Error 404'
 		);
 		$this->load->view('public/_partials/head.php', $data);
 		$this->load->view('public/_partials/navbar.php', $data);
@@ -199,8 +199,8 @@ class Main extends CI_Controller
 	public function tampil_kontak()
 	{
 		$data = array(
-			'title' => "Kontak Kami",
-			'header1' => "Kontak Kami",
+			'title' => 'Kontak Kami',
+			'header1' => 'Kontak Kami'
 		);
 		$this->load->view('public/_partials/head.php', $data);
 		$this->load->view('public/_partials/navbar.php', $data);
@@ -211,8 +211,8 @@ class Main extends CI_Controller
 	public function tampil_signup()
 	{
 		$data = array(
-			'title' => "Sign Up",
-			'header1' => "Sign Up",
+			'title' => 'Sign Up',
+			'header1' => 'Sign Up'
 		);
 		$this->load->view('public/_partials/head.php', $data);
 		$this->load->view('public/_partials/navbar.php', $data);
@@ -223,8 +223,8 @@ class Main extends CI_Controller
 	public function tampil_login()
 	{
 		$data = array(
-			'title' => "Login",
-			'header1' => "Login",
+			'title' => 'Login',
+			'header1' => 'Login'
 		);
 		$this->load->view('public/_partials/head.php', $data);
 		$this->load->view('public/_partials/navbar.php', $data);
@@ -235,8 +235,8 @@ class Main extends CI_Controller
 	public function tampil_penghubung()
 	{
 		$data = array(
-			'title' => "Penghubung",
-			'header1' => "Penghubung",
+			'title' => 'Penghubung',
+			'header1' => 'Penghubung'
 		);
 		$this->load->view('public/_partials/head.php', $data);
 		$this->load->view('public/_partials/navbar.php', $data);
@@ -247,8 +247,8 @@ class Main extends CI_Controller
 	public function tampil_editor()
 	{
 		$data = array(
-			'title' => "Editor",
-			'header1' => "Editor",
+			'title' => 'Editor',
+			'header1' => 'Editor'
 		);
 		$this->load->view('editor/_partials/head.php', $data);
 		$this->load->view('editor/_partials/navbar.php', $data);
@@ -259,8 +259,8 @@ class Main extends CI_Controller
 	public function tampil_buatblog()
 	{
 		$data = array(
-			'title' => "Buat Blog",
-			'header1' => "Buat Blog",
+			'title' => 'Buat Blog',
+			'header1' => 'Buat Blog'
 		);
 		$this->load->view('editor/_partials/head.php', $data);
 		$this->load->view('editor/_partials/navbar.php', $data);
@@ -271,8 +271,8 @@ class Main extends CI_Controller
 	public function tampil_makananpokok()
 	{
 		$data = array(
-			'title' => "Makanan Pokok",
-			'header1' => "Makanan Pokok",
+			'title' => 'Makanan Pokok',
+			'header1' => 'Makanan Pokok'
 		);
 		$this->load->view('public/_partials/head.php', $data);
 		$this->load->view('public/_partials/navbar.php', $data);
@@ -283,8 +283,8 @@ class Main extends CI_Controller
 	public function tampil_laukpauk()
 	{
 		$data = array(
-			'title' => "Lauk Pauk",
-			'header1' => "Lauk Pauk",
+			'title' => 'Lauk Pauk',
+			'header1' => 'Lauk Pauk'
 		);
 		$this->load->view('public/_partials/head.php', $data);
 		$this->load->view('public/_partials/navbar.php', $data);
@@ -295,8 +295,8 @@ class Main extends CI_Controller
 	public function tampil_sayur()
 	{
 		$data = array(
-			'title' => "Sayur",
-			'header1' => "Sayur",
+			'title' => 'Sayur',
+			'header1' => 'Sayur'
 		);
 		$this->load->view('public/_partials/head.php', $data);
 		$this->load->view('public/_partials/navbar.php', $data);
@@ -307,8 +307,8 @@ class Main extends CI_Controller
 	public function tampil_buah()
 	{
 		$data = array(
-			'title' => "Buah-Buahan",
-			'header1' => "Buah-Buahan",
+			'title' => 'Buah-Buahan',
+			'header1' => 'Buah-Buahan'
 		);
 		$this->load->view('public/_partials/head.php', $data);
 		$this->load->view('public/_partials/navbar.php', $data);
@@ -319,8 +319,8 @@ class Main extends CI_Controller
 	public function tampil_susu()
 	{
 		$data = array(
-			'title' => "Susu",
-			'header1' => "Susu",
+			'title' => 'Susu',
+			'header1' => 'Susu'
 		);
 		$this->load->view('public/_partials/head.php', $data);
 		$this->load->view('public/_partials/navbar.php', $data);
@@ -331,8 +331,8 @@ class Main extends CI_Controller
 	public function tampil_namahalaman()
 	{
 		$data = array(
-			'title' => "Header",
-			'header1' => "Header 1",
+			'title' => 'Header',
+			'header1' => 'Header 1'
 		);
 		$this->load->view('public/_partials/head.php', $data);
 		$this->load->view('public/_partials/navbar.php', $data);

@@ -3,7 +3,7 @@
 <body>
     <div class="container-fluid">
       <div class="row">
-          
+
           <?php $this->load->view('admin/_partials/sidebar'); ?>
           <main role="main" class="col-md-9 col-lg-10 px-md-4">
              <div class ="row">
@@ -20,7 +20,7 @@
             </div>
                 <?php $this->load->view('admin/_partials/editor/data_editor')?>
             <div class="row">
-                <div class="col border-bottom">
+                <div class="col border-bottom" style="max-height:300px; overflow:auto;">
                     <?php $this->load->view('admin/_partials/editor/tabel_editor') ?>
                 </div>
             </div>

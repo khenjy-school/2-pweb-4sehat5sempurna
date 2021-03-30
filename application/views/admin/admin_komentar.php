@@ -20,7 +20,7 @@
             </div>
                 <?php $this->load->view('admin/_partials/komentar/data_komentar')?>
             <div class="row">
-                <div class="col border-bottom">
+                <div class="col border-bottom" style="max-height:300px; overflow:auto;">
                     <?php $this->load->view('admin/_partials/komentar/tabel_komentar') ?>
                 </div>
             </div>

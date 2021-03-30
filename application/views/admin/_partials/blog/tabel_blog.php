@@ -18,7 +18,7 @@
             <td class="text-break" width="20%">
                 <?php echo $s->judul_blog ?>
             </td>
-            <td class="text-break" width="20%">
+            <td class="text-break" width="25%">
                 <?php echo $s->nama_editor ?>
             </td>
             <td class="text-break" width="10%">
@@ -27,7 +27,7 @@
             <td class="text-break" width="20%">
                 <img src="<?php echo base_url('upload/blog/'.$blog->gambar) ?>" width="64" />
             </td>
-            <td width="20%">
+            <td width="15%">
                 <a class="btn btn-warning text-white" href="<?php echo site_url('blog/edit/'.$s->id_blog) ?>">Edit</a>
                 
                 <a class="btn btn-danger text-white" href="<?php echo site_url('blog/delete/'.$s->id_blog) ?>">Hapus</a>

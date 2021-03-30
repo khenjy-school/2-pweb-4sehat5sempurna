@@ -6,32 +6,32 @@
           
           <?php $this->load->view('admin/_partials/sidebar'); ?>
           <main role="main" class="col-md-9 col-lg-10 px-md-4">
-           <div class ="row">
-            <div class="col-md pt-md-5 mb-md-3 border-bottom">
-                <div class="row">
-                    <div class="col-md-auto my-auto">
-                        <span class="h1"><?php echo $header1;?></span>
+             <div class ="row">
+                <div class="col-md pt-md-5 mb-md-3 border-bottom">
+                    <div class="row">
+                        <div class="col-md-auto my-auto">
+                            <span class="h1"><?php echo $header1;?></span>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="row">
+              <div class="col-md-auto">
+                <?php $this->load->view('admin/_partials/blog/data_blog')?>
+            </div>
+            <div class="col-md-auto">
+                <?php $this->load->view('admin/_partials/editor/data_editor')?>
+            </div>
+            <div class="col-md-auto">
+                <?php $this->load->view('admin/_partials/komentar/data_komentar')?>
+            </div>
         </div>
         <div class="row">
-          <div class="col-md-auto">
-            <?php $this->load->view('admin/_partials/blog/data_blog')?>
-        </div>
-        <div class="col-md-auto">
-            <?php $this->load->view('admin/_partials/editor/data_editor')?>
-        </div>
-        <div class="col-md-auto">
-            <?php $this->load->view('admin/_partials/komentar/data_komentar')?>
+          <div class="col border-bottom">
+            Keterangan : halaman ini memuat data-data umum seputar 4 sehat 5 sempurna
         </div>
     </div>
-    <div class="row">
-      <div class="col border-bottom">
-        Keterangan : halaman ini memuat data-data umum seputar 4 sehat 5 sempurna
-    </div>
-</div>
-<?php $this->load->view('admin/_partials/footer'); ?>
+    <?php $this->load->view('admin/_partials/footer'); ?>
 </main>
 </div>
 </div>
