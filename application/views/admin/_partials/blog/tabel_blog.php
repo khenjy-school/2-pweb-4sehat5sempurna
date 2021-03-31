@@ -12,7 +12,7 @@
     <tbody>
         <?php foreach ($blog as $s) { ?>
         <tr>
-            <td class="text-break" width="10%">
+            <td class="" width="10%">
                 <?php echo $s->id_blog ?>
             </td>
             <td class="text-break" width="20%">
@@ -21,13 +21,13 @@
             <td class="text-break" width="25%">
                 <?php echo $s->nama_editor ?>
             </td>
-            <td class="text-break" width="10%">
+            <td class="" width="10%">
                 <a class="btn btn-secondary">Lihat</a>
             </td>
             <td class="text-break" width="20%">
                 <img src="<?php echo base_url('upload/blog/'.$blog->gambar) ?>" width="64" />
             </td>
-            <td width="15%">
+            <td class="" width="15%">
                 <a class="btn btn-warning text-white" href="<?php echo site_url('blog/edit/'.$s->id_blog) ?>">Edit</a>
                 
                 <a class="btn btn-danger text-white" href="<?php echo site_url('blog/delete/'.$s->id_blog) ?>">Hapus</a>

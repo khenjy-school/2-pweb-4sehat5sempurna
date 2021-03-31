@@ -25,9 +25,8 @@
     </div>
 
     <div class="form-group">
-      <a class="btn btn-secondary" href="<?php echo site_url('main/tampil_home'); ?>" name="btnback">BACK</a>
-      <button class="btn btn-danger" type="reset" name="btnreset">RESET</button>
-      <button class="btn btn-success" type="submit" name="btntambah">SIMPAN</button>
+      <button class="btn btn-danger w-25" type="reset" name="btnreset">RESET</button>
+      <button class="btn btn-success w-25" type="submit" name="btntambah">SIMPAN</button>
     </div>
 
     <div class="form-group">

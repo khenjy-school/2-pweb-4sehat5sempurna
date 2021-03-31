@@ -32,9 +32,7 @@ class Main extends CI_Controller
 			$data['title'] = 'Sign Up';
 			$data['header1'] = 'Sign Up';
 			$this->load->view('admin/_partials/head.php', $data);
-			$this->load->view('admin/_partials/navbar.php', $data);
 			$this->load->view('admin/signup.php', $data);
-			$this->load->view('admin/_partials/footer.php');
 		}
     }
 
@@ -61,20 +59,16 @@ class Main extends CI_Controller
             else{
                 echo "<scipt>alert('email tidak ditemukan')</script>";
 				$data['title'] = 'Login';
-				$data['header1'] = 'Login';
+				$data['header1'] = 'Login Administrator';
 				$this->load->view('admin/_partials/head.php', $data);
-				$this->load->view('admin/_partials/navbar.php', $data);
 				$this->load->view('admin/login.php', $data);
-				$this->load->view('admin/_partials/footer.php');
             }
 		}
 		else{
 			$data['title'] = 'Login';
-			$data['header1'] = 'Login';
+			$data['header1'] = 'Login Administrator';
 			$this->load->view('admin/_partials/head.php', $data);
-			$this->load->view('admin/_partials/navbar.php', $data);
 			$this->load->view('admin/login.php', $data);
-			$this->load->view('admin/_partials/footer.php');
 		}
     }
 

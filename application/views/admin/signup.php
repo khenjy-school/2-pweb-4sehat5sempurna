@@ -4,7 +4,7 @@
       <div class="container-fluid">
         <div class="row">
           <main role="main" class="col-md-5 mx-md-auto px-md-4">
-            <div class="card m-md-3">
+            <div class="card m-3">
               <div class ="card-header pt-md-5 border-bottom">
                   <h1 class="text-center"><?php echo $header1; ?></h1>
               </div>
