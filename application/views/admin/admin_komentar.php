@@ -5,25 +5,31 @@
       <div class="row">
           
           <?php $this->load->view('admin/_partials/sidebar'); ?>
-          <main role="main" class="col-md-9 col-lg-10 px-md-4">
+          <main role="main" class="col-md-9 px-md-4">
              <div class ="row">
-                <div class="col-md pt-md-5 mb-md-3 border-bottom">
+                <div class="col-md pt-md-4 my-3 border-bottom">
                     <div class="row">
-                        <div class="col-md-auto my-auto">
+                        <div class="col-auto my-auto">
                             <span class="h1"><?php echo $header1;?></span>
                         </div>
-                        <div class="col-md-auto my-auto">
+                        <div class="col-auto my-auto">
                             <a class="btn btn-success" href="<?php echo site_url('komentar/tambah'); ?>">TAMBAH +</a>
                         </div>
                     </div>
                 </div>
             </div>
-                <?php $this->load->view('admin/_partials/komentar/data_komentar')?>
+            <?php $this->load->view('admin/_partials/komentar/data_komentar')?>
             <div class="row">
-                <div class="col border-bottom" style="max-height:300px; overflow:auto;">
+                <div class="col my-3" style="max-height:300px; overflow:auto;">
                     <?php $this->load->view('admin/_partials/komentar/tabel_komentar') ?>
                 </div>
             </div>
+            <div class="row">
+                <div class="col my-3 border-bottom">
+                    
+                </div>
+            </div>
+
             <?php $this->load->view('admin/_partials/footer'); ?>
         </main>
     </div>

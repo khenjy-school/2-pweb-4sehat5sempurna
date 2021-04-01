@@ -28,9 +28,9 @@
                 <?php echo $s->tglkomen ?>
             </td>
             <td class="" width="20%">
-                <a class="btn btn-warning text-white" href="<?php echo site_url('komentar/edit/'.$s->id_komentar) ?>">Edit</a>
+                <a class="btn btn-warning text-white my-2 col-lg-auto" href="<?php echo site_url('komentar/edit/'.$s->id_komentar) ?>">Edit</a>
                 
-                <a class="btn btn-danger text-white" href="<?php echo site_url('komentar/delete/'.$s->id_komentar) ?>">Hapus</a>
+                <a class="btn btn-danger text-white my-2 col-lg-auto" href="<?php echo site_url('komentar/delete/'.$s->id_komentar) ?>">Hapus</a>
             </td>
 	    </tr>
 	    <?php } ?>

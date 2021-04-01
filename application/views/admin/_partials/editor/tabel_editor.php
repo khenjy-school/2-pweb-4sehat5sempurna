@@ -32,9 +32,9 @@
                 <?php echo $s->tglgabung ?>
             </td>
             <td class="" width="15%">
-                <a class="btn btn-warning text-white" href="<?php echo site_url('editor/edit/'.$s->id_editor) ?>">Edit</a>
+                <a class="btn btn-warning text-white my-2 col-lg-auto" href="<?php echo site_url('editor/edit/'.$s->id_editor) ?>">Edit</a>
                 
-                <a class="btn btn-danger text-white" href="<?php echo site_url('editor/delete/'.$s->id_editor) ?>">Hapus</a>
+                <a class="btn btn-danger text-white my-2 col-lg-auto" href="<?php echo site_url('editor/delete/'.$s->id_editor) ?>">Hapus</a>
             </td>
 	    </tr>
 	    <?php } ?>

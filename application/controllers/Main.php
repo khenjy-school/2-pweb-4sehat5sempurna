@@ -230,7 +230,8 @@ class Main extends CI_Controller
 	{
 		$data = array(
 			'title' => 'Penghubung',
-			'header1' => 'Penghubung'
+			'header1' => 'Penghubung',
+			'blog' => $this->Blog_mdl->getAll('blog')->result()
 		);
 		$this->load->view('public/_partials/head.php', $data);
 		$this->load->view('public/_partials/navbar.php', $data);

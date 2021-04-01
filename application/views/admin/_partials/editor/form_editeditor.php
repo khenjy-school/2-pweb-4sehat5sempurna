@@ -45,7 +45,7 @@
   <div class="col-md-4 form-group">
       <label for="image">Gambar Akun</label>
       <input type="file" 
-      class="form-control" name="txtimage" id="image" placeholder="masukkan gambar di sini" value="<?php echo $editor->image ?>"  
+      class="form-control" name="txtimage" id="image" placeholder="masukkan gambar di sini" value="<?php echo $editor->gambar ?>"  
       aria-describedby="helpId" required="required">
   </div>
 

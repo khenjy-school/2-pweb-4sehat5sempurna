@@ -1,9 +1,9 @@
 <!-- Sidebar -->
-<nav class="navbar-fixed-top show">
+<nav class="navbar-fixed-top">
     <ul class="nav flex-column" id="">
         <li class="nav-item border-bottom sidebar">
             <a class="nav-link" href="<?php echo site_url('main/tampil_admin') ?>">
-                <span class="h3">Dashboard</span>
+                <span class="h4">Dashboard</span>
             </a>
         </li>
         

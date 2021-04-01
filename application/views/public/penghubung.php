@@ -28,57 +28,10 @@
     </div>
     
 </div>
-<div class="row">
-  <div class="col-md">
-    <div class="card" style="width: 18rem;">
-      <img src="img/buah-buahan.jpg">
-  </div>
-</div>
-<div class="col-md">
-    <div class="card" style="width: 18rem;">
-
-    </div>
-</div>
-
-</div>
-<div class="row">
-  <div class="col-md">
-    <div class="card" style="width: 18rem;">
-
-    </div>
-</div>
-<div class="col-md">
-    <div class="card" style="width: 18rem;">
-
-    </div>
-</div>
-<div class="col-md">
-    <div class="card" style="width: 18rem;">
-
-    </div>
+<?php $this->load->view('public/_partials/list_article') ?>
 </div>
 </div>
-</div>
-</div>
-<d    iv class=" col-md-3">
-    <ul class="nav nav-pills" style="text-align: center;">
-      <li class="nav-item p-2">
-          <a class="nav-link active" style="background-color: #e9ad53; height: 100px; width: 241px; padding-top: 35px; font-weight: 500; color: black; font-size: 12pt;" href="makananpokok.html">Makanan Pokok</a>
-      </li>
-      <li class="nav-item p-2">
-          <a class="nav-link active" style="background-color: #8e6931; height: 100px; width: 241px; padding-top: 35px; font-weight: 500; color: black; font-size: 13pt;" href="laukpauk.html">Lauk Pauk</a>
-      </li>
-      <li class="nav-item p-2">
-          <a class="nav-link active" style="background-color: #7bea47; height: 100px; width: 241px; padding-top: 35px; font-weight: 500; color: black; font-size: 13pt;" href="sayur.html">Sayur</a>
-      </li>
-      <li class="nav-item p-2">
-          <a class="nav-link active" style="background-color: #ef5c53; height: 100px; width: 241px; padding-top: 35px; font-weight: 500; color: black; font-size: 13pt;" href="buahbuahan.html">Buah</a>
-      </li>
-      <li class="nav-item p-2">
-          <a class="nav-link active" style="background-color: #b1b9ad; height: 100px; width: 241px; padding-top: 35px; font-weight: 500; color: black; font-size: 13pt;" href="susu.html">Susu</a>
-      </li>
-  </ul>
-</div>
+<?php $this->load->view('public/_partials/navigation_article2') ?>
 </div>
 </div>    
 

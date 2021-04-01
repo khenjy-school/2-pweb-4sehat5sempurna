@@ -1,5 +1,5 @@
-<div class="row my-md-4">
-  <div class="col-sm-auto">
+<div class="row">
+  <div class="col-auto my-2">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Jumlah Komentar</h5>

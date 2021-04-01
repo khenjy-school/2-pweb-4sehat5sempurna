@@ -17,7 +17,7 @@
             </div>
             <div class="row">
                 <div class="col-11 border-bottom">
-                    <?php $this->load->view('admin/_partials/editor/form_editblog') ?>
+                    <?php $this->load->view('admin/_partials/blog/form_editblog') ?>
                 </div>
             </div>
             <?php $this->load->view('admin/_partials/footer'); ?>

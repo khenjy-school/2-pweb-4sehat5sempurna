@@ -16,7 +16,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col border-bottom">
+                <div class="col-11 border-bottom">
                     <?php $this->load->view('admin/_partials/editor/form_editeditor') ?>
                 </div>
             </div>

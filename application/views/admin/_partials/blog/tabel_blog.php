@@ -22,15 +22,15 @@
                 <?php echo $s->nama_editor ?>
             </td>
             <td class="" width="10%">
-                <a class="btn btn-secondary">Lihat</a>
+                <a class="btn btn-secondary my-2 col-lg-auto">Lihat</a>
             </td>
             <td class="text-break" width="20%">
                 <img src="<?php echo base_url('upload/blog/'.$blog->gambar) ?>" width="64" />
             </td>
             <td class="" width="15%">
-                <a class="btn btn-warning text-white" href="<?php echo site_url('blog/edit/'.$s->id_blog) ?>">Edit</a>
+                <a class="btn btn-warning text-white my-2 col-lg-auto" href="<?php echo site_url('blog/edit/'.$s->id_blog) ?>">Edit</a>
                 
-                <a class="btn btn-danger text-white" href="<?php echo site_url('blog/delete/'.$s->id_blog) ?>">Hapus</a>
+                <a class="btn btn-danger text-white my-2 col-lg-auto" href="<?php echo site_url('blog/delete/'.$s->id_blog) ?>">Hapus</a>
             </td>
 	    </tr>
 	    <?php } ?>

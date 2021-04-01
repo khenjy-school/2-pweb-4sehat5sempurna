@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #A8F584;">
+<nav class="navbar navbar-expand-md navbar-light" style="background-color: #A8F584;">
     <a class="navbar-brand" href="<?php echo site_url('main/tampil_home'); ?>" >
         <img src="<?php echo base_url("assets/img/brand/brand.jpg") ?>" alt="" srcset="" style="height: 40px;">
     </a>
