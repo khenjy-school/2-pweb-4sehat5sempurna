@@ -24,7 +24,6 @@ class Komentar_mdl extends CI_Model
 	public function getById($id_komentar)
 	{
 		return $this->db->get_where($this->_table, ["id_komentar" => $id_komentar])->row();
-		redirect('komentar/edit', 'refresh');
 	}
 	
 	public function countAll($_table)
@@ -33,14 +32,14 @@ class Komentar_mdl extends CI_Model
 	}
 
 	//Berfungsi untuk menyimpan data pada tabel komentar
-	public function save($table, $data)
+	public function save($_table, $data)
 	{
-		$this->db->insert($table, $data);
+		$this->db->insert($_table, $data);
 		redirect('main/tampil_admin_komentar', 'refresh');
 	}
 
 	//Berfungsi untuk melakukan update data pada tabel komentar
-	public function update()
+	public function update($id_komentar, $data)
 	{
 		$this->db->where('id_komentar', $id_komentar);
 		$this->db->update('komentar', $data);
@@ -48,7 +47,7 @@ class Komentar_mdl extends CI_Model
 	}
 
 	//Berfungsi untuk menghapus data pada tabel komentar
-	public function delete()
+	public function delete($id_komentar)
 	{
 		$this->db->where('id_komentar', $id_komentar);
 		$this->db->delete('komentar');

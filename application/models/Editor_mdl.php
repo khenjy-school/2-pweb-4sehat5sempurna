@@ -6,6 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Editor_mdl extends CI_Model
 {
 	private $_table = 'editor';
+	private $_tableblog = 'blog';
 
 	public $id_editor;
     public $nama;
@@ -24,7 +25,6 @@ class Editor_mdl extends CI_Model
 	public function getById($id_editor)
 	{
 		return $this->db->get_where($this->_table, ["id_editor" => $id_editor])->row();
-		redirect('editor/edit', 'refresh');
 	}
 
 	public function countAll($_table)
@@ -53,12 +53,6 @@ class Editor_mdl extends CI_Model
 		$this->db->where('id_editor', $id_editor);
 		$this->db->delete('editor');
 		redirect('main/tampil_admin_editor', 'refresh');
-	}
-
-	//Berfungsi untuk menghitung jumlah editor
-	public function jmlh_editor($value='')
-	{
-		$this->db->count('id_editor', $data);
 	}
 }
 ?>

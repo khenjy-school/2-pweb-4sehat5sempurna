@@ -9,6 +9,7 @@ class Blog extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('Blog_mdl');
+		$this->load->model('Editor_mdl');
 		$this->load->helper('url');
 	}
 
@@ -25,8 +26,11 @@ class Blog extends CI_Controller
 			$this->Blog_mdl->save('blog', $data);
 		}
 		else{
-			$data['title'] = "Tambah Blog";
-			$data['header1'] = 'Tambah Blog';
+			$data = array(
+				'title' => 'Tambah Blog',
+				'header1' => 'Tambah Blog',
+				'editor' => $this->Editor_mdl->getAll('editor')->result()
+			);
 			$this->load->view('admin/_partials/head.php', $data);
 			$this->load->view('admin/_partials/navbar.php', $data);
 			$this->load->view('admin/admin_addblog', $data);
@@ -39,7 +43,6 @@ class Blog extends CI_Controller
 	{
 		if(isset($_POST['btnsimpan'])) {
 			$data = array(
-				'id_blog' => $this->input->post('txtidblog'),
 				'judul_blog' => $this->input->post('txtjudul'),
 				'nama_editor' => $this->input->post('txtnama'),
 				'isi_blog' => $this->input->post('txtisi')
@@ -49,9 +52,12 @@ class Blog extends CI_Controller
 			// Executes: REPLACE INTO blog (judul_blog, nama_editor, isi_blog) VALUES ('txtjudul', 'txteditor', 'txtisi')
 		}
 		else {
-			$data['blog'] = $this->Blog_mdl->getById($id_blog);
-			$data['title'] = "Edit Blog";
-			$data['header1'] = 'Edit Blog';
+			$data = array(
+				'title' => 'Edit Blog',
+				'header1' => 'Edit Blog',
+				'blog' => $this->Blog_mdl->getById($id_blog),
+				'editor' => $this->Editor_mdl->getAll('editor')->result()
+			);
 			$this->load->view('admin/_partials/head.php', $data);
 			$this->load->view('admin/_partials/navbar.php', $data);
 			$this->load->view('admin/admin_editblog', $data);

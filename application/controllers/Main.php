@@ -54,10 +54,11 @@ class Main extends CI_Controller
 
 				$this->session->set_userdata('admin', $login);
 
+				echo '<script>alert("Berhasil Login")</script>';
 				redirect('main/tampil_admin');
             }
             else{
-                echo "<scipt>alert('email tidak ditemukan')</script>";
+				echo '<script>alert("email tidak ditemukan")</script>';
 				$data['title'] = 'Login';
 				$data['header1'] = 'Login Administrator';
 				$this->load->view('admin/_partials/head.php', $data);
@@ -99,12 +100,13 @@ class Main extends CI_Controller
 	}
 
 	//Berfungsi untuk menampilkan halaman admin bagian blog (sementara sebelum dipindahkan ke controller masing-masing)
-	public function tampil_admin_blog()
+	public function tampil_admin_blog($nama = null)
 	{
 		$data = array(
 			'title' => 'Admin - Blog',
 			'header1' => 'List Blog',
 			'blog' => $this->Blog_mdl->getAll('blog')->result(),
+			'editor' => $this->Blog_mdl->getByNama($nama),
 			'jumlah_blog' => $this->Blog_mdl->countAll('blog')
 		);
 		$this->load->view('admin/_partials/head.php', $data);

@@ -9,6 +9,7 @@ class Komentar extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('Komentar_mdl');
+		$this->load->model('Blog_mdl');
 		$this->load->helper('url');
 	}
 	
@@ -27,8 +28,11 @@ class Komentar extends CI_Controller
 			$this->Komentar_mdl->save('komentar', $data);
 		}
 		else{
-			$data['title'] = "Tambah Komentar";
-			$data['header1'] = 'Tambah Komentar';
+			$data = array(
+				'title' => 'Tambah Komentar',
+				'header1' => 'Tambah Komentar',
+				'blog' => $this->Blog_mdl->getAll('blog')->result()
+			);
 			$this->load->view('admin/_partials/head.php', $data);
 			$this->load->view('admin/_partials/navbar.php', $data);
 			$this->load->view('admin/admin_addkomentar.php', $data);
@@ -41,7 +45,6 @@ class Komentar extends CI_Controller
 	{
 		if(isset($_POST['btnsimpan'])) {
 			$data = array(
-				'id_komentar' => $this->input->post('txtidkomentar'),
 				'judul_blog' => $this->input->post('txtjudulblog'),
 				'nama' => $this->input->post('txtnama'),
 				'email' => $this->input->post('txtemail'),
@@ -53,9 +56,11 @@ class Komentar extends CI_Controller
 			// Executes: REPLACE INTO komentar (judul_blog, nama, email, isi, tglkomen) VALUES ('txtjudulblog', 'txtnama', 'txtemail', 'txtisi', 'txttglkomentar')
 		}
 		else {
-			$data['komentar'] = $this->Komentar_mdl->getById($id_komentar);
-			$data['title'] = "Edit Komentar";
-			$data['header1'] = 'Edit Komentar';
+			$data = array(
+				'title' => 'Edit Komentar',
+				'header1' => 'Edit Komentar',
+				'komentar' => $this->Komentar_mdl->getById($id_komentar)
+			);
 			$this->load->view('admin/_partials/head.php', $data);
 			$this->load->view('admin/_partials/navbar.php', $data);
 			$this->load->view('admin/admin_editkomentar.php', $data);

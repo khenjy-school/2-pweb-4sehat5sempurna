@@ -6,6 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Blog_mdl extends CI_Model
 {
 	private $_table = 'blog';
+	private $_tableblog = 'editor';
 
 	public $id_blog;
     public $judul_blog;
@@ -23,6 +24,12 @@ class Blog_mdl extends CI_Model
 	public function getById($id_blog)
 	{
 		return $this->db->get_where($this->_table, ["id_blog" => $id_blog])->row();
+	}
+
+	//Berfungsi untuk mengambil email berdasarkan nama editor
+	public function getByNama($nama)
+	{
+		return $this->db->get_where($this->_tableblog, ["nama" => $nama])->row();
 	}
 
 	public function countAll($_table)

@@ -8,7 +8,11 @@
 
   <div class="col-md-4 form-group">
       <label for="nama">Nama</label>
-      <input type="text" class="form-control" name="txteditor" id="nama" aria-describedby="helpId" placeholder="masukkan nama di sini">
+      <select class="form-control" id="nama" name="txteditor">
+      <?php foreach ($editor as $s) { ?>
+          <option><?php echo $s->nama ?></option>
+        <?php } ?>
+      </select>
   </div>
 
   <div class="col-md-4 form-group">
